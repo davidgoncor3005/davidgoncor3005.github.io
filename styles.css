@@ -1,0 +1,32 @@
+/* Reset mínimo y tipografía */
+:root {
+--brand-primary: #0d6efd; /* Bootstrap primary */
+}
+html { scroll-behavior: smooth; }
+body { font-feature-settings: "kern"; }
+
+/* Utilidades propias */
+.badge-tech { margin: .15rem; }
+.avatar {
+width: 88px;
+height: 88px;
+border-radius: 50%;
+
+object-fit: cover;
+box-shadow: 0 0 0 3px #fff, 0 1px 12px rgba(0,0,0,.15);
+}
+.section-title { margin-top: 3rem; margin-bottom: 1rem; }
+
+/* Navbar */
+.navbar-brand { letter-spacing: .3px; }
+
+/* Cards */
+.card { border-radius: 1rem; }
+.card .badge { font-weight: 500; }
+
+/* Footer */
+footer { margin-top: 3rem; padding: 2rem 0; color: #6c757d; }
+
+/* Tabla */
+.table thead th { font-size: .9rem; color: #6c757d; }
+.table td, .table th { vertical-align: middle; }
