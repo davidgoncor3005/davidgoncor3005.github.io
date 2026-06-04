@@ -1,12 +1,31 @@
-/* Reset mínimo y tipografía */
 :root {
-    --brand-primary: #0d6efd; /* Bootstrap primary */
+    --brand-primary: #0d6efd;   /* Borde para hover en tecnologías */
+    --page-bg: #ffffff;         /* Fondo general de la página */
+    --section-bg: #f8f9fa;      /* Fondo de secciones */
+    --card-bg: #ffffff;         /* Fondo de las cards */
+    --text-main: #212529;       /* Color principal del texto */
+    --text-muted-custom: #6c757d; /* Color para texto secundario y placeholders */
+    --border-custom: #dee2e6;   /* Color para bordes personalizados */
+    --badge-bg: #f8f9fa;        /* Fondo para tecnologías */
+    --badge-hover-bg: #eef4ff; /* Fondo de las tecnologías al pasar el mouse */
+}
+
+[data-theme="dark"] {
+    --brand-primary: #6ea8fe;
+    --page-bg: #121417;
+    --section-bg: #1b1f24;
+    --card-bg: #1f242b;
+    --text-main: #f1f3f5;
+    --text-muted-custom: #adb5bd;
+    --border-custom: #343a40;
+    --badge-bg: #2b3035;
+    --badge-hover-bg: #243447;
 }
 html { 
-    scroll-behavior: smooth; 
+    scroll-behavior: smooth; /* Para un desplazamiento suave al hacer clic en enlaces */
 }
 body { 
-    font-feature-settings: "kern"; 
+    font-feature-settings: "kern"; /* Para mejorar el espaciado entre caracteres */
 }
 
 /* Utilidades propias */
@@ -152,4 +171,90 @@ footer {
 
 textarea {
     resize: vertical;
+}
+
+/* Modo claro / oscuro */
+body {
+    background-color: var(--page-bg);
+    color: var(--text-main);
+}
+
+.bg-light,
+.bg-body-tertiary {
+    background-color: var(--section-bg) !important;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-color: var(--border-custom);
+    color: var(--text-main);
+}
+
+.border-bottom,
+.border-top {
+    border-color: var(--border-custom) !important;
+}
+
+.text-secondary,
+.text-muted {
+    color: var(--text-muted-custom) !important;
+}
+
+.navbar-brand,
+.nav-link,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-main);
+}
+
+.tech-item,
+.project-stack span {
+    background-color: var(--badge-bg);
+    border-color: var(--border-custom);
+    color: var(--text-main);
+}
+
+.tech-item:hover {
+    background-color: var(--badge-hover-bg);
+    border-color: var(--brand-primary);
+}
+
+.project-img-wrapper {
+    background-color: var(--section-bg);
+}
+
+.form-control {
+    background-color: var(--card-bg);
+    border-color: var(--border-custom);
+    color: var(--text-main);
+}
+
+.form-control::placeholder {
+    color: var(--text-muted-custom);
+}
+
+.form-control:focus {
+    background-color: var(--card-bg);
+    color: var(--text-main);
+}
+
+[data-theme="dark"] .btn-outline-dark {
+    color: #f8f9fa;
+    border-color: #f8f9fa;
+}
+
+[data-theme="dark"] .btn-outline-dark:hover {
+    color: #121417;
+    background-color: #f8f9fa;
+}
+
+#themeToggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
 }
