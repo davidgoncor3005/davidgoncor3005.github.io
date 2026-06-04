@@ -149,3 +149,7 @@ footer {
     height: 16px;
     object-fit: contain;
 }
+
+textarea {
+    resize: vertical;
+}
