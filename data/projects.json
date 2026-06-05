@@ -1,0 +1,54 @@
+[
+  {
+    "name": "WoMHAT",
+    "description": "Aplicación web tipo DCIM para la gestión de CPDs, salas, racks, equipos, usuarios, permisos y mantenimiento. La versión publicada incluye una API REST para la gestión de equipos.",
+    "image": "images/project/womhat-preview.webp",
+    "imageAlt": "Captura de WoMHAT",
+    "repository": "https://github.com/davidgoncor3005/womhat-equipment-api",
+    "preview": "",
+    "stack": [
+      { "name": "Java", "icon": "images/tech/java.webp" },
+      { "name": "Spring Boot", "icon": "images/tech/spring-boot.webp" },
+      { "name": "Spring MVC", "icon": "images/tech/spring-mvc.webp" },
+      { "name": "Spring Data JPA", "icon": "images/tech/spring-data-jpa.webp" },
+      { "name": "Spring Security", "icon": "images/tech/spring-security.webp" },
+      { "name": "Thymeleaf", "icon": "images/tech/thymeleaf.webp" },
+      { "name": "MariaDB", "icon": "images/tech/mariadb.webp" },
+      { "name": "Bootstrap", "icon": "images/tech/bootstrap.webp" },
+      { "name": "Docker", "icon": "images/tech/docker.webp" },
+      { "name": "Swagger/OpenAPI", "icon": "images/tech/swagger.webp" },
+      { "name": "Postman", "icon": "images/tech/postman.webp" }
+    ]
+  },
+  {
+    "name": "PixelGameNow",
+    "description": "Proyecto web desarrollado con Symfony orientado a la gestión de videojuegos, usando entidades, formularios, plantillas Twig, base de datos y estructura MVC.",
+    "image": "images/project/pixelgamenow-preview.webp",
+    "imageAlt": "Captura de PixelGameNow",
+    "repository": "https://github.com/davidgoncor3005/PixelGameNow",
+    "preview": "",
+    "stack": [
+      { "name": "PHP", "icon": "images/tech/php.webp" },
+      { "name": "Symfony", "icon": "images/tech/symfony.webp" },
+      { "name": "Doctrine", "icon": "images/tech/doctrine.webp" },
+      { "name": "Twig", "icon": "images/tech/twig.webp" },
+      { "name": "MySQL", "icon": "images/tech/mysql.webp" },
+      { "name": "Bootstrap", "icon": "images/tech/bootstrap.webp" }
+    ]
+  },
+  {
+    "name": "Portfolio",
+    "description": "Web personal publicada con GitHub Pages para mostrar mi perfil, tecnologías, proyectos, experiencia y formas de contacto.",
+    "image": "",
+    "imageAlt": "Captura del portfolio",
+    "repository": "https://github.com/davidgoncor3005/davidgoncor3005.github.io",
+    "preview": "https://davidgoncor3005.github.io/",
+    "stack": [
+      { "name": "HTML5", "icon": "images/tech/html5.webp" },
+      { "name": "CSS3", "icon": "images/tech/css3.webp" },
+      { "name": "Bootstrap", "icon": "images/tech/bootstrap.webp" },
+      { "name": "JavaScript", "icon": "images/tech/javascript.webp" },
+      { "name": "GitHub Pages", "icon": "images/tech/github-pages.webp" }
+    ]
+  }
+]
