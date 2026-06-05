@@ -111,3 +111,56 @@ function createProjectCard(project) {
         </div>
     `;
 }
+
+// Cargar tecnologías desde JSON
+const technologiesContainer = document.getElementById('technologiesContainer');
+
+fetch('data/technologies.json')
+    .then(response => response.json())
+    .then(categories => {
+        technologiesContainer.innerHTML = '';
+
+        categories.forEach(category => {
+            technologiesContainer.innerHTML += createTechnologyCard(category);
+        });
+    })
+    .catch(error => {
+        console.error('Error al cargar las tecnologías:', error);
+
+        technologiesContainer.innerHTML = `
+            <div class="col-12">
+                <div class="alert alert-warning" role="alert">
+                    No se han podido cargar las tecnologías.
+                </div>
+            </div>
+        `;
+    });
+
+function createTechnologyCard(category) {
+    const technologies = category.items.map(technology => {
+        return `
+            <span class="tech-item">
+                <img src="${technology.icon}" alt="${technology.name}">
+                ${technology.name}
+            </span>
+        `;
+    }).join('');
+
+    const columnClass = category.category === 'Despliegue' ? 'col-lg-12' : 'col-lg-6';
+
+    return `
+        <div class="${columnClass}">
+            <div class="card h-100 shadow-sm tech-card">
+                <div class="card-body">
+                    <h3 class="h6 text-uppercase text-muted mb-3">
+                        ${category.category}
+                    </h3>
+
+                    <div class="tech-list">
+                        ${technologies}
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+}
