@@ -4,7 +4,7 @@
 
 🔗 [Ver portfolio publicado](https://davidgoncor3005.github.io/)
 
-> Captura pendiente de añadir.
+![Captura del portfolio](images/project/portfolio-preview.webp)
 
 ## 🛠️ Tecnologías
 
@@ -18,6 +18,9 @@
 
 ```txt
 davidgoncor3005.github.io/
+├── data/
+│   ├── projects.json
+│   └── technologies.json
 ├── docs/
 ├── images/
 │   ├── favicon/

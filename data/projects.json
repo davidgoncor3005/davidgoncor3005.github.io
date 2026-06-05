@@ -39,7 +39,7 @@
   {
     "name": "Portfolio",
     "description": "Web personal publicada con GitHub Pages para mostrar mi perfil, tecnologías, proyectos, experiencia y formas de contacto.",
-    "image": "",
+    "image": "images/project/portfolio-preview.webp",
     "imageAlt": "Captura del portfolio",
     "repository": "https://github.com/davidgoncor3005/davidgoncor3005.github.io",
     "preview": "https://davidgoncor3005.github.io/",
