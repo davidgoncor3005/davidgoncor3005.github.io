@@ -9,3 +9,7 @@ export const ui = {
 export type Lang = keyof typeof ui;
 
 export const defaultLang: Lang = "es";
+
+export function getTranslations(lang: Lang) {
+    return ui[lang];
+}

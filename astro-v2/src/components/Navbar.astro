@@ -1,10 +1,15 @@
 ---
 const { t, lang } = Astro.props;
+
+const isSpanish = lang === "es";
+const isEnglish = lang === "en";
 ---
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom">
     <div class="container">
-        <a class="navbar-brand fw-semibold" href="#">David González Córdoba</a>
+        <a class="navbar-brand fw-semibold" href={isSpanish ? "/" : "/en/"}>
+            David González Córdoba
+        </a>
 
         <button
             class="navbar-toggler"
@@ -42,16 +47,19 @@ const { t, lang } = Astro.props;
 
                 <li class="nav-item ms-lg-4 my-lg-1">
                     <div class="btn-group btn-group-sm" role="group" aria-label="Selector de idioma">
-                        <button class="btn btn-outline-primary active" type="button">
-                            {t.language.es}
-                        </button>
-
-                        <button
-                            class="btn btn-outline-secondary"
-                            type="button"
+                        <a
+                            href="/"
+                            class={isSpanish ? "btn btn-outline-primary active" : "btn btn-outline-secondary"}
                         >
-                            {t.language.en}
-                        </button>
+                            ES
+                        </a>
+
+                        <a
+                            href="/en/"
+                            class={isEnglish ? "btn btn-outline-primary active" : "btn btn-outline-secondary"}
+                        >
+                            EN
+                        </a>
                     </div>
                 </li>
 
