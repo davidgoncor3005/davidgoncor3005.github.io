@@ -1,0 +1,81 @@
+---
+import type { Project, Lang } from "../types/portfolio";
+
+interface Props {
+    projects: Project[];
+    t: any;
+    lang: Lang;
+}
+
+const { projects, t, lang } = Astro.props;
+---
+
+<section id="proyectos" class="section-title">
+    <h2 class="h4">
+        <i class="bi bi-folder2-open me-2 text-primary"></i>
+        {t.projects.title}
+    </h2>
+
+    <div class="row g-4">
+        {projects.map((project) => (
+            <div class="col-lg-4 col-md-6">
+                <article class="card h-100 shadow-sm project-card">
+                    <div class="project-img-wrapper">
+                        {project.image ? (
+                            <img
+                                src={`/${project.image}`}
+                                class="card-img-top project-img"
+                                alt={project.imageAlt[lang]}
+                            />
+                        ) : (
+                            <div class="project-img-wrapper">
+                                <span></span>
+                            </div>
+                        )}
+                    </div>
+
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="h5">{project.name}</h3>
+
+                        <p class="text-secondary">
+                            {project.description[lang]}
+                        </p>
+
+                        <div class="project-stack mb-3">
+                            {project.stack.map((technology) => (
+                                <span>
+                                    <img src={`/${technology.icon}`} alt="" />
+                                    {technology.name}
+                                </span>
+                            ))}
+                        </div>
+
+                        <div class="mt-auto d-flex flex-wrap gap-2">
+                            <a
+                                href={project.repository}
+                                class="btn btn-outline-primary btn-sm"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                <i class="bi bi-github me-1"></i>
+                                Code
+                            </a>
+
+                            {project.preview && (
+                                <a
+                                    href={project.preview}
+                                    class="btn btn-primary btn-sm"
+                                    target="_blank"
+                                    rel="noopener"
+                                >
+                                    <i class="bi bi-box-arrow-up-right me-1"></i>
+                                    Preview
+                                </a>
+                            )}
+                        </div>
+                    </div>
+                </article>
+            </div>
+        ))}
+    </div>
+</section>

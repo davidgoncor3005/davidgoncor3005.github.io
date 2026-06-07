@@ -1,0 +1,22 @@
+html {
+    scroll-behavior: smooth; /* Para un desplazamiento suave al hacer clic en enlaces */
+}
+
+body {
+    font-feature-settings: "kern"; /* Para mejorar el espaciado entre caracteres */
+    background-color: var(--page-bg);
+    color: var(--text-main);
+}
+
+.section-title {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+.badge-tech {
+    margin: .15rem;
+}
+
+textarea {
+    resize: vertical;
+}

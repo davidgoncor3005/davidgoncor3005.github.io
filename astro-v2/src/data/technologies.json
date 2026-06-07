@@ -1,0 +1,70 @@
+[
+  {
+    "category": {
+      "es": "Backend",
+      "en": "Backend"
+    },
+    "items": [
+      { "name": "Java", "icon": "images/tech/java.webp" },
+      { "name": "Spring Boot", "icon": "images/tech/spring-boot.webp" },
+      { "name": "Spring MVC", "icon": "images/tech/spring-mvc.webp" },
+      { "name": "Spring Data JPA", "icon": "images/tech/spring-data-jpa.webp" },
+      { "name": "Spring Security", "icon": "images/tech/spring-security.webp" },
+      { "name": "PHP", "icon": "images/tech/php.webp" },
+      { "name": "Symfony", "icon": "images/tech/symfony.webp" },
+      { "name": "Doctrine", "icon": "images/tech/doctrine.webp" }
+    ]
+  },
+  {
+    "category": {
+      "es": "Frontend",
+      "en": "Frontend"
+    },
+    "items": [
+      { "name": "HTML5", "icon": "images/tech/html5.webp" },
+      { "name": "CSS3", "icon": "images/tech/css3.webp" },
+      { "name": "JavaScript", "icon": "images/tech/javascript.webp" },
+      { "name": "Astro", "icon": "images/tech/astro.webp" },
+      { "name": "TypeScript", "icon": "images/tech/typescript.webp" },
+      { "name": "SCSS", "icon": "images/tech/sass.webp" },
+      { "name": "Bootstrap", "icon": "images/tech/bootstrap.webp" },
+      { "name": "Thymeleaf", "icon": "images/tech/thymeleaf.webp" },
+      { "name": "Twig", "icon": "images/tech/twig.webp" }
+    ]
+  },
+  {
+    "category": {
+      "es": "Bases de datos",
+      "en": "Databases"
+    },
+    "items": [
+      { "name": "MySQL", "icon": "images/tech/mysql.webp" },
+      { "name": "MariaDB", "icon": "images/tech/mariadb.webp" },
+      { "name": "MongoDB", "icon": "images/tech/mongodb.webp" }
+    ]
+  },
+  {
+    "category": {
+      "es": "Herramientas",
+      "en": "Tools"
+    },
+    "items": [
+      { "name": "Git", "icon": "images/tech/git.webp" },
+      { "name": "GitHub", "icon": "images/tech/github.webp" },
+      { "name": "Docker", "icon": "images/tech/docker.webp" },
+      { "name": "Postman", "icon": "images/tech/postman.webp" },
+      { "name": "Swagger/OpenAPI", "icon": "images/tech/swagger.webp" },
+      { "name": "Figma", "icon": "images/tech/figma.webp" },
+      { "name": "GitHub Actions", "icon": "images/tech/github-actions.webp" }
+    ]
+  },
+  {
+    "category": {
+      "es": "Despliegue",
+      "en": "Deployment"
+    },
+    "items": [
+      { "name": "GitHub Pages", "icon": "images/tech/github-pages.webp" }
+    ]
+  }
+]

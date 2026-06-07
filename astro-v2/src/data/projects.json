@@ -1,0 +1,73 @@
+[
+  {
+    "name": "WoMHAT",
+    "description": {
+      "es": "Aplicación web tipo DCIM para la gestión de CPDs, salas, racks, equipos, usuarios, permisos y mantenimiento. La versión publicada incluye una API REST para la gestión de equipos.",
+      "en": "DCIM-style web application for managing data centers, rooms, racks, equipment, users, permissions and maintenance. The published version includes a REST API for equipment management."
+    },
+    "image": "images/project/womhat-preview.webp",
+    "imageAlt": {
+      "es": "Captura de WoMHAT",
+      "en": "WoMHAT screenshot"
+    },
+    "repository": "https://github.com/davidgoncor3005/womhat-equipment-api",
+    "preview": "",
+    "stack": [
+      { "name": "Java", "icon": "images/tech/java.webp" },
+      { "name": "Spring Boot", "icon": "images/tech/spring-boot.webp" },
+      { "name": "Spring MVC", "icon": "images/tech/spring-mvc.webp" },
+      { "name": "Spring Data JPA", "icon": "images/tech/spring-data-jpa.webp" },
+      { "name": "Spring Security", "icon": "images/tech/spring-security.webp" },
+      { "name": "Thymeleaf", "icon": "images/tech/thymeleaf.webp" },
+      { "name": "MariaDB", "icon": "images/tech/mariadb.webp" },
+      { "name": "Bootstrap", "icon": "images/tech/bootstrap.webp" },
+      { "name": "Docker", "icon": "images/tech/docker.webp" },
+      { "name": "Swagger/OpenAPI", "icon": "images/tech/swagger.webp" },
+      { "name": "Postman", "icon": "images/tech/postman.webp" }
+    ]
+  },
+  {
+    "name": "PixelGameNow",
+    "description": {
+      "es": "Proyecto web desarrollado con Symfony orientado a la gestión de videojuegos, usando entidades, formularios, plantillas Twig, base de datos y estructura MVC.",
+      "en": "Web project developed with Symfony focused on video game management, using entities, forms, Twig templates, database persistence and an MVC structure."
+    },
+    "image": "images/project/pixelgamenow-preview.webp",
+    "imageAlt": {
+      "es": "Captura de PixelGameNow",
+      "en": "PixelGameNow screenshot"
+    },
+    "repository": "https://github.com/davidgoncor3005/PixelGameNow",
+    "preview": "",
+    "stack": [
+      { "name": "PHP", "icon": "images/tech/php.webp" },
+      { "name": "Symfony", "icon": "images/tech/symfony.webp" },
+      { "name": "Doctrine", "icon": "images/tech/doctrine.webp" },
+      { "name": "Twig", "icon": "images/tech/twig.webp" },
+      { "name": "MySQL", "icon": "images/tech/mysql.webp" },
+      { "name": "Bootstrap", "icon": "images/tech/bootstrap.webp" }
+    ]
+  },
+  {
+    "name": "Portfolio",
+    "description": {
+      "es": "Web personal desarrollada con Astro y publicada con GitHub Pages para mostrar mi perfil, tecnologías, proyectos, experiencia y formas de contacto.",
+      "en": "Personal website built with Astro and published with GitHub Pages to present my profile, technologies, projects, experience and contact options."
+    },
+    "image": "images/project/portfolio-preview.webp",
+    "imageAlt": {
+      "es": "Captura del portfolio personal",
+      "en": "Personal portfolio screenshot"
+    },
+    "repository": "https://github.com/davidgoncor3005/davidgoncor3005.github.io",
+    "preview": "https://davidgoncor3005.github.io/",
+    "stack": [
+      { "name": "Astro", "icon": "images/tech/astro.webp" },
+      { "name": "TypeScript", "icon": "images/tech/typescript.webp" },
+      { "name": "SCSS", "icon": "images/tech/sass.webp" },
+      { "name": "Bootstrap", "icon": "images/tech/bootstrap.webp" },
+      { "name": "GitHub Pages", "icon": "images/tech/github-pages.webp" },
+      { "name": "GitHub Actions", "icon": "images/tech/github-actions.webp" }
+    ]
+  }
+]
