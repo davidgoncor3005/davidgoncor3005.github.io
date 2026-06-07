@@ -1,0 +1,23 @@
+:root {
+    --brand-primary: #0d6efd;   /* Borde para hover en tecnologías */
+    --page-bg: #ffffff;         /* Fondo general de la página */
+    --section-bg: #f8f9fa;      /* Fondo de secciones */
+    --card-bg: #ffffff;         /* Fondo de las cards */
+    --text-main: #212529;       /* Color principal del texto */
+    --text-muted-custom: #6c757d; /* Color para texto secundario y placeholders */
+    --border-custom: #dee2e6;   /* Color para bordes personalizados */
+    --badge-bg: #f8f9fa;        /* Fondo para tecnologías */
+    --badge-hover-bg: #eef4ff; /* Fondo de las tecnologías al pasar el mouse */
+}
+
+[data-theme="dark"] {
+    --brand-primary: #6ea8fe;
+    --page-bg: #121417;
+    --section-bg: #1b1f24;
+    --card-bg: #1f242b;
+    --text-main: #f1f3f5;
+    --text-muted-custom: #adb5bd;
+    --border-custom: #343a40;
+    --badge-bg: #2b3035;
+    --badge-hover-bg: #243447;
+}

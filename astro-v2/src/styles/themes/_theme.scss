@@ -1,0 +1,51 @@
+.bg-light,
+.bg-body-tertiary {
+    background-color: var(--section-bg) !important;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-color: var(--border-custom);
+    color: var(--text-main);
+}
+
+.border-bottom,
+.border-top {
+    border-color: var(--border-custom) !important;
+}
+
+.text-secondary,
+.text-muted {
+    color: var(--text-muted-custom) !important;
+}
+
+.navbar-brand,
+.nav-link,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-main);
+}
+
+.table thead th {
+    font-size: .9rem;
+    color: var(--text-muted-custom);
+}
+
+.table td,
+.table th {
+    vertical-align: middle;
+}
+
+[data-theme="dark"] .btn-outline-dark {
+    color: #f8f9fa;
+    border-color: #f8f9fa;
+}
+
+[data-theme="dark"] .btn-outline-dark:hover {
+    color: #121417;
+    background-color: #f8f9fa;
+}

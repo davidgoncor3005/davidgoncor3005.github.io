@@ -1,0 +1,14 @@
+.form-control {
+    background-color: var(--card-bg);
+    border-color: var(--border-custom);
+    color: var(--text-main);
+}
+
+.form-control::placeholder {
+    color: var(--text-muted-custom);
+}
+
+.form-control:focus {
+    background-color: var(--card-bg);
+    color: var(--text-main);
+}

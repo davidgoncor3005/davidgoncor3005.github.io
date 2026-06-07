@@ -1,0 +1,12 @@
+---
+const { t } = Astro.props;
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="border-top">
+    <div class="container">
+        <p class="mb-0 small">
+            © {currentYear} {t.footer.text}
+        </p>
+    </div>
+</footer>

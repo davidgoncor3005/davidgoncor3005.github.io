@@ -1,0 +1,41 @@
+---
+import type { TechnologyCategory, Lang } from "../types/portfolio";
+
+interface Props {
+    technologies: TechnologyCategory[];
+    title: string;
+    lang: Lang;
+}
+
+const { technologies, title, lang } = Astro.props;
+---
+
+<section id="tecnologias" class="section-title">
+    <h2 class="h4">
+        <i class="bi bi-tools me-2 text-primary"></i>
+        {title}
+    </h2>
+
+    <div class="row g-3">
+        {technologies.map((category) => (
+            <div class={category.category.es === "Despliegue" ? "col-lg-12" : "col-lg-6"}>
+                <div class="card h-100 shadow-sm tech-card">
+                    <div class="card-body">
+                        <h3 class="h6 text-uppercase text-muted mb-3">
+                            {category.category[lang]}
+                        </h3>
+
+                        <div class="tech-list">
+                            {category.items.map((technology) => (
+                                <span class="tech-item">
+                                    <img src={`/${technology.icon}`} alt={technology.name} />
+                                    {technology.name}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        ))}
+    </div>
+</section>
