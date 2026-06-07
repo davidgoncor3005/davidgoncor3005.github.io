@@ -1,12 +1,13 @@
 ---
-import type { Project } from "../types/portfolio";
+import type { Project, Lang } from "../types/portfolio";
 
 interface Props {
     projects: Project[];
     t: any;
+    lang: Lang;
 }
 
-const { projects, t } = Astro.props;
+const { projects, t, lang } = Astro.props;
 ---
 
 <section id="proyectos" class="section-title">
@@ -24,7 +25,7 @@ const { projects, t } = Astro.props;
                             <img
                                 src={`/${project.image}`}
                                 class="card-img-top project-img"
-                                alt={project.imageAlt}
+                                alt={project.imageAlt[lang]}
                             />
                         ) : (
                             <div class="project-img-wrapper">
@@ -37,7 +38,7 @@ const { projects, t } = Astro.props;
                         <h3 class="h5">{project.name}</h3>
 
                         <p class="text-secondary">
-                            {project.description}
+                            {project.description[lang]}
                         </p>
 
                         <div class="project-stack mb-3">
@@ -57,7 +58,7 @@ const { projects, t } = Astro.props;
                                 rel="noopener"
                             >
                                 <i class="bi bi-github me-1"></i>
-                                {t.projects.codeButton}
+                                Code
                             </a>
 
                             {project.preview && (
@@ -68,7 +69,7 @@ const { projects, t } = Astro.props;
                                     rel="noopener"
                                 >
                                     <i class="bi bi-box-arrow-up-right me-1"></i>
-                                    {t.projects.previewButton}
+                                    Preview
                                 </a>
                             )}
                         </div>

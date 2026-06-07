@@ -1,9 +1,15 @@
 [
   {
     "name": "WoMHAT",
-    "description": "Aplicación web tipo DCIM para la gestión de CPDs, salas, racks, equipos, usuarios, permisos y mantenimiento. La versión publicada incluye una API REST para la gestión de equipos.",
+    "description": {
+      "es": "Aplicación web tipo DCIM para la gestión de CPDs, salas, racks, equipos, usuarios, permisos y mantenimiento. La versión publicada incluye una API REST para la gestión de equipos.",
+      "en": "DCIM-style web application for managing data centers, rooms, racks, equipment, users, permissions and maintenance. The published version includes a REST API for equipment management."
+    },
     "image": "images/project/womhat-preview.webp",
-    "imageAlt": "Captura de WoMHAT",
+    "imageAlt": {
+      "es": "Captura de WoMHAT",
+      "en": "WoMHAT screenshot"
+    },
     "repository": "https://github.com/davidgoncor3005/womhat-equipment-api",
     "preview": "",
     "stack": [
@@ -22,9 +28,15 @@
   },
   {
     "name": "PixelGameNow",
-    "description": "Proyecto web desarrollado con Symfony orientado a la gestión de videojuegos, usando entidades, formularios, plantillas Twig, base de datos y estructura MVC.",
+    "description": {
+      "es": "Proyecto web desarrollado con Symfony orientado a la gestión de videojuegos, usando entidades, formularios, plantillas Twig, base de datos y estructura MVC.",
+      "en": "Web project developed with Symfony focused on video game management, using entities, forms, Twig templates, database persistence and an MVC structure."
+    },
     "image": "images/project/pixelgamenow-preview.webp",
-    "imageAlt": "Captura de PixelGameNow",
+    "imageAlt": {
+      "es": "Captura de PixelGameNow",
+      "en": "PixelGameNow screenshot"
+    },
     "repository": "https://github.com/davidgoncor3005/PixelGameNow",
     "preview": "",
     "stack": [
@@ -38,17 +50,24 @@
   },
   {
     "name": "Portfolio",
-    "description": "Web personal publicada con GitHub Pages para mostrar mi perfil, tecnologías, proyectos, experiencia y formas de contacto.",
+    "description": {
+      "es": "Web personal desarrollada con Astro y publicada con GitHub Pages para mostrar mi perfil, tecnologías, proyectos, experiencia y formas de contacto.",
+      "en": "Personal website built with Astro and published with GitHub Pages to present my profile, technologies, projects, experience and contact options."
+    },
     "image": "images/project/portfolio-preview.webp",
-    "imageAlt": "Captura del portfolio",
+    "imageAlt": {
+      "es": "Captura del portfolio personal",
+      "en": "Personal portfolio screenshot"
+    },
     "repository": "https://github.com/davidgoncor3005/davidgoncor3005.github.io",
     "preview": "https://davidgoncor3005.github.io/",
     "stack": [
-      { "name": "HTML5", "icon": "images/tech/html5.webp" },
-      { "name": "CSS3", "icon": "images/tech/css3.webp" },
+      { "name": "Astro", "icon": "images/tech/astro.webp" },
+      { "name": "TypeScript", "icon": "images/tech/typescript.webp" },
+      { "name": "SCSS", "icon": "images/tech/sass.webp" },
       { "name": "Bootstrap", "icon": "images/tech/bootstrap.webp" },
-      { "name": "JavaScript", "icon": "images/tech/javascript.webp" },
-      { "name": "GitHub Pages", "icon": "images/tech/github-pages.webp" }
+      { "name": "GitHub Pages", "icon": "images/tech/github-pages.webp" },
+      { "name": "GitHub Actions", "icon": "images/tech/github-actions.webp" }
     ]
   }
 ]

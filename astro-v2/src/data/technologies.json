@@ -1,6 +1,9 @@
 [
   {
-    "category": "Backend",
+    "category": {
+      "es": "Backend",
+      "en": "Backend"
+    },
     "items": [
       { "name": "Java", "icon": "images/tech/java.webp" },
       { "name": "Spring Boot", "icon": "images/tech/spring-boot.webp" },
@@ -13,18 +16,27 @@
     ]
   },
   {
-    "category": "Frontend",
+    "category": {
+      "es": "Frontend",
+      "en": "Frontend"
+    },
     "items": [
       { "name": "HTML5", "icon": "images/tech/html5.webp" },
       { "name": "CSS3", "icon": "images/tech/css3.webp" },
       { "name": "JavaScript", "icon": "images/tech/javascript.webp" },
+      { "name": "Astro", "icon": "images/tech/astro.webp" },
+      { "name": "TypeScript", "icon": "images/tech/typescript.webp" },
+      { "name": "SCSS", "icon": "images/tech/sass.webp" },
       { "name": "Bootstrap", "icon": "images/tech/bootstrap.webp" },
       { "name": "Thymeleaf", "icon": "images/tech/thymeleaf.webp" },
       { "name": "Twig", "icon": "images/tech/twig.webp" }
     ]
   },
   {
-    "category": "Bases de datos",
+    "category": {
+      "es": "Bases de datos",
+      "en": "Databases"
+    },
     "items": [
       { "name": "MySQL", "icon": "images/tech/mysql.webp" },
       { "name": "MariaDB", "icon": "images/tech/mariadb.webp" },
@@ -32,18 +44,25 @@
     ]
   },
   {
-    "category": "Herramientas",
+    "category": {
+      "es": "Herramientas",
+      "en": "Tools"
+    },
     "items": [
       { "name": "Git", "icon": "images/tech/git.webp" },
       { "name": "GitHub", "icon": "images/tech/github.webp" },
       { "name": "Docker", "icon": "images/tech/docker.webp" },
       { "name": "Postman", "icon": "images/tech/postman.webp" },
       { "name": "Swagger/OpenAPI", "icon": "images/tech/swagger.webp" },
-      { "name": "Figma", "icon": "images/tech/figma.webp" }
+      { "name": "Figma", "icon": "images/tech/figma.webp" },
+      { "name": "GitHub Actions", "icon": "images/tech/github-actions.webp" }
     ]
   },
   {
-    "category": "Despliegue",
+    "category": {
+      "es": "Despliegue",
+      "en": "Deployment"
+    },
     "items": [
       { "name": "GitHub Pages", "icon": "images/tech/github-pages.webp" }
     ]

@@ -36,8 +36,8 @@ const technologies = technologiesData as TechnologyCategory[];
     <main class="container">
         <About t={t} />
         <Experience t={t} />
-        <Technologies technologies={technologies} title={t.technologies.title} />
-        <Projects projects={projects} t={t} />
+        <Technologies technologies={technologies} title={t.technologies.title} lang={lang} />
+        <Projects projects={projects} t={t} lang={lang} />
         <Contact t={t} />
     </main>
 

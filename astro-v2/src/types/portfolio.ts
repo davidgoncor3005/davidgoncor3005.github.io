@@ -1,18 +1,25 @@
+export type Lang = "es" | "en";
+
+export interface LocalizedText {
+    es: string;
+    en: string;
+}
+
 export interface Technology {
     name: string;
     icon: string;
 }
 
 export interface TechnologyCategory {
-    category: string;
+    category: LocalizedText;
     items: Technology[];
 }
 
 export interface Project {
     name: string;
-    description: string;
+    description: LocalizedText;
     image: string;
-    imageAlt: string;
+    imageAlt: LocalizedText;
     repository: string;
     preview: string;
     stack: Technology[];
