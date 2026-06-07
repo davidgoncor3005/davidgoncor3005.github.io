@@ -1,3 +1,7 @@
+---
+const { t } = Astro.props;
+---
+
 <header class="py-5 bg-light border-bottom">
     <div class="container d-flex flex-column flex-sm-row align-items-center gap-4 text-center text-sm-start">
         <img
@@ -14,22 +18,20 @@
                 rel="noopener"
             >
                 <i class="bi bi-briefcase me-1"></i>
-                Disponible para trabajo
+                {t.hero.badge}
             </a>
 
-            <h1 class="h2 mb-2">¡Hola! Soy David González Córdoba</h1>
+            <h1 class="h2 mb-2">{t.hero.title}</h1>
 
             <p class="mb-3 text-secondary">
-                <strong>Desarrollador Web Junior | Titulado en Desarrollo de Aplicaciones Web.</strong><br />
-                Me gusta construir aplicaciones web útiles, bien estructuradas y fáciles de mantener.
-                Estoy centrado en seguir creciendo como desarrollador y aplicar buenas prácticas reales de desarrollo,
-                documentación y despliegue.
+                <strong>{t.hero.subtitle}</strong><br />
+                {t.hero.description}
             </p>
 
             <div class="d-flex flex-wrap gap-2 justify-content-center justify-content-sm-start">
                 <a href="#proyectos" class="btn btn-primary">
                     <i class="bi bi-folder2-open me-1"></i>
-                    Ver proyectos
+                    {t.hero.projectsButton}
                 </a>
 
                 <a
@@ -39,7 +41,7 @@
                     rel="noopener"
                 >
                     <i class="bi bi-file-earmark-person me-1"></i>
-                    Descargar CV
+                    {t.hero.cvButton}
                 </a>
 
                 <a
@@ -49,7 +51,7 @@
                     rel="noopener"
                 >
                     <i class="bi bi-github me-1"></i>
-                    GitHub
+                    {t.hero.githubButton}
                 </a>
 
                 <a
@@ -59,12 +61,12 @@
                     rel="noopener"
                 >
                     <i class="bi bi-linkedin me-1"></i>
-                    LinkedIn
+                    {t.hero.linkedinButton}
                 </a>
 
                 <a href="mailto:dgoncor3005@gmail.com" class="btn btn-outline-secondary">
                     <i class="bi bi-envelope me-1"></i>
-                    Contáctame
+                    {t.hero.contactButton}
                 </a>
             </div>
         </div>

@@ -1,24 +1,23 @@
+---
+const { t } = Astro.props;
+---
+
 <section id="sobre-mi" class="section-title">
     <h2 class="h4">
         <i class="bi bi-person-circle me-2 text-primary"></i>
-        Sobre mí
+        {t.about.title}
     </h2>
 
     <div class="card shadow-sm">
         <div class="card-body">
             <p class="mb-3">
-                Soy <strong>desarrollador web junior</strong> interesado especialmente en el desarrollo backend con
-                <strong>Java, Spring Boot y APIs REST</strong>, sin dejar de lado el frontend, las bases de datos,
-                la documentación y el despliegue.
+                {t.about.paragraph}
             </p>
 
             <ul class="mb-0">
-                <li>
-                    Destaco por mi actitud positiva, capacidad de adaptación y ganas de seguir aprendiendo.
-                </li>
-                <li>
-                    Mi objetivo es integrarme en un equipo de desarrollo, aportar en proyectos reales y seguir creciendo profesionalmente.
-                </li>
+                {t.about.points.map((point) => (
+                    <li>{point}</li>
+                ))}
             </ul>
         </div>
     </div>

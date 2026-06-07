@@ -1,7 +1,11 @@
+---
+const { t } = Astro.props;
+---
+
 <section id="experiencia" class="section-title">
     <h2 class="h4">
         <i class="bi bi-briefcase me-2 text-primary"></i>
-        Experiencia laboral
+        {t.experience.title}
     </h2>
 
     <div class="row g-3">
@@ -10,24 +14,23 @@
                 <div class="card-body">
                     <h3 class="h6 mb-1">
                         <i class="bi bi-code-square me-1 text-primary"></i>
-                        Desarrollador Web Junior
+                        {t.experience.ntt.role}
                     </h3>
 
-                    <p class="mb-1 fw-semibold">NTT DATA Américo Vespucio · Contrato de prácticas</p>
+                    <p class="mb-1 fw-semibold">{t.experience.ntt.company}</p>
 
                     <p class="mb-2 small text-secondary">
-                        2025 - 2026 · Sevilla, Andalucía, España
+                        {t.experience.ntt.date}
                     </p>
 
                     <p class="mb-3">
-                        Prácticas formativas en desarrollo de aplicaciones web, participando en tareas relacionadas
-                        con backend, APIs REST y resolución de incidencias técnicas.
+                        {t.experience.ntt.description}
                     </p>
 
                     <ul class="mb-0 small">
-                        <li>Desarrollo y mantenimiento de APIs REST con Spring Boot.</li>
-                        <li>Documentación y pruebas de endpoints con OpenAPI/Swagger y Postman.</li>
-                        <li>Uso de Git/GitHub, bases de datos y operaciones CRUD en entornos de desarrollo.</li>
+                        {t.experience.ntt.tasks.map((task) => (
+                            <li>{task}</li>
+                        ))}
                     </ul>
                 </div>
             </div>
@@ -38,23 +41,23 @@
                 <div class="card-body">
                     <h3 class="h6 mb-1">
                         <i class="bi bi-pc-display-horizontal me-1 text-secondary"></i>
-                        Técnico de sistemas informáticos
+                        {t.experience.gines.role}
                     </h3>
 
-                    <p class="mb-1 fw-semibold">Departamento Informática Ayuntamiento de Gines · Contrato de prácticas</p>
+                    <p class="mb-1 fw-semibold">{t.experience.gines.company}</p>
 
                     <p class="mb-2 small text-secondary">
-                        2024 · Gines, Andalucía, España
+                        {t.experience.gines.date}
                     </p>
 
                     <p class="mb-3">
-                        Prácticas formativas en el área de sistemas informáticos y soporte técnico.
+                        {t.experience.gines.description}
                     </p>
 
                     <ul class="mb-0 small">
-                        <li>Resolución de incidencias hardware y software en remoto y presencial.</li>
-                        <li>Instalación, actualización y mantenimiento de equipos.</li>
-                        <li>Atención a usuarios y apoyo en tareas del entorno técnico.</li>
+                        {t.experience.gines.tasks.map((task) => (
+                            <li>{task}</li>
+                        ))}
                     </ul>
                 </div>
             </div>

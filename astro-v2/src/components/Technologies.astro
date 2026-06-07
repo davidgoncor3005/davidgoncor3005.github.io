@@ -3,15 +3,16 @@ import type { TechnologyCategory } from "../types/portfolio";
 
 interface Props {
     technologies: TechnologyCategory[];
+    title: string;
 }
 
-const { technologies } = Astro.props;
+const { technologies, title } = Astro.props;
 ---
 
 <section id="tecnologias" class="section-title">
     <h2 class="h4">
         <i class="bi bi-tools me-2 text-primary"></i>
-        Tecnologías y herramientas
+        {title}
     </h2>
 
     <div class="row g-3">

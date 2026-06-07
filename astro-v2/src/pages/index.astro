@@ -4,6 +4,8 @@ import technologiesData from "../data/technologies.json";
 
 import type { Project, TechnologyCategory } from "../types/portfolio";
 
+import { defaultLang, ui } from "../i18n";
+
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Navbar from "../components/Navbar.astro";
 import Hero from "../components/Hero.astro";
@@ -16,19 +18,22 @@ import Footer from "../components/Footer.astro";
 
 const projects = projectsData as Project[];
 const technologies = technologiesData as TechnologyCategory[];
+
+const lang = defaultLang;
+const t = ui[lang];
 ---
 
-<BaseLayout>
-    <Navbar />
-    <Hero />
+<BaseLayout title={t.meta.title} description={t.meta.description}>
+    <Navbar t={t} lang={lang} />
+    <Hero t={t} />
 
     <main class="container">
-        <About />
-        <Experience />
-        <Technologies technologies={technologies} />
-        <Projects projects={projects} />
-        <Contact />
+        <About t={t} />
+        <Experience t={t} />
+        <Technologies technologies={technologies} title={t.technologies.title} />
+        <Projects projects={projects} t={t} />
+        <Contact t={t} />
     </main>
 
-    <Footer />
+    <Footer t={t} />
 </BaseLayout>
