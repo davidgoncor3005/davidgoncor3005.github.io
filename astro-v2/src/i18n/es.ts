@@ -1,8 +1,8 @@
 export const es = {
     meta: {
-        title: "Portfolio de David González Córdoba",
+        title: "David González Córdoba | Desarrollador Web Junior",
         description:
-            "Portfolio profesional de David González Córdoba, desarrollador web junior titulado en Desarrollo de Aplicaciones Web."
+            "Portfolio profesional de David González Córdoba, desarrollador web junior titulado en Desarrollo de Aplicaciones Web. Proyectos con Astro, Spring Boot, Symfony, APIs REST y GitHub Pages."
     },
 
     nav: {
@@ -76,9 +76,9 @@ export const es = {
 
     contact: {
         title: "Hablemos",
-        namePlaceholder: "Tu nombre",
-        emailPlaceholder: "tuemail@ejemplo.com",
-        messagePlaceholder: "Escribe tu mensaje...",
+        name: "Tu nombre",
+        email: "tuemail@ejemplo.com",
+        message: "Escribe tu mensaje...",
         submitButton: "Enviar mensaje"
     },
 

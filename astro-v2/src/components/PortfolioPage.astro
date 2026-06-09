@@ -33,7 +33,7 @@ const technologies = technologiesData as TechnologyCategory[];
     <Navbar t={t} lang={lang} />
     <Hero t={t} />
 
-    <main class="container">
+    <main id="contenido" class="container" tabindex="-1">
         <About t={t} />
         <Experience t={t} />
         <Technologies technologies={technologies} title={t.technologies.title} lang={lang} />

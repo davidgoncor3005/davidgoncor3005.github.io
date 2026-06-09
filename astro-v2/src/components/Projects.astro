@@ -44,7 +44,7 @@ const { projects, t, lang } = Astro.props;
                         <div class="project-stack mb-3">
                             {project.stack.map((technology) => (
                                 <span>
-                                    <img src={`/${technology.icon}`} alt="" />
+                                    <img src={`/${technology.icon}`} alt="" aria-hidden="true" />
                                     {technology.name}
                                 </span>
                             ))}
@@ -56,8 +56,9 @@ const { projects, t, lang } = Astro.props;
                                 class="btn btn-outline-primary btn-sm"
                                 target="_blank"
                                 rel="noopener"
+                                aria-label={`${lang === "en" ? "View repository of" : "Ver repositorio de"} ${project.name}`}
                             >
-                                <i class="bi bi-github me-1"></i>
+                                <i class="bi bi-github me-1" aria-hidden="true"></i>
                                 Code
                             </a>
 
@@ -67,8 +68,9 @@ const { projects, t, lang } = Astro.props;
                                     class="btn btn-primary btn-sm"
                                     target="_blank"
                                     rel="noopener"
+                                    aria-label={`${lang === "en" ? "View live preview of" : "Ver vista publicada de"} ${project.name}`}
                                 >
-                                    <i class="bi bi-box-arrow-up-right me-1"></i>
+                                    <i class="bi bi-box-arrow-up-right me-1" aria-hidden="true"></i>
                                     Preview
                                 </a>
                             )}
