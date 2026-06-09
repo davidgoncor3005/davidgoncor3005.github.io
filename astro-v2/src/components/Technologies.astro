@@ -28,7 +28,7 @@ const { technologies, title, lang } = Astro.props;
                         <div class="tech-list">
                             {category.items.map((technology) => (
                                 <span class="tech-item">
-                                    <img src={`/${technology.icon}`} alt={technology.name} />
+                                    <img src={`/${technology.icon}`} alt="" aria-hidden="true" />
                                     {technology.name}
                                 </span>
                             ))}
