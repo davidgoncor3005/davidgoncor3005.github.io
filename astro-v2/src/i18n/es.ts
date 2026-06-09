@@ -1,8 +1,8 @@
 export const es = {
     meta: {
-        title: "Portfolio de David González Córdoba",
+        title: "David González Córdoba | Desarrollador Web Junior",
         description:
-            "Portfolio profesional de David González Córdoba, desarrollador web junior titulado en Desarrollo de Aplicaciones Web."
+            "Portfolio profesional de David González Córdoba, desarrollador web junior titulado en Desarrollo de Aplicaciones Web. Proyectos con Astro, Spring Boot, Symfony, APIs REST y GitHub Pages."
     },
 
     nav: {

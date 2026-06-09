@@ -2,10 +2,23 @@
 import "../styles/main.scss";
 
 const {
-    title = "Portfolio de David González Córdoba",
+    title = "David González Córdoba | Desarrollador Web Junior",
     description = "Portfolio profesional de David González Córdoba, desarrollador web junior titulado en Desarrollo de Aplicaciones Web.",
     lang = "es"
 } = Astro.props;
+
+const siteUrl = "https://davidgoncor3005.github.io";
+const currentPath = lang === "en" ? "/en/" : "/";
+const canonicalUrl = `${siteUrl}${currentPath}`;
+
+const alternateEsUrl = `${siteUrl}/`;
+const alternateEnUrl = `${siteUrl}/en/`;
+
+const imagePath = "/images/social/portfolio-og.webp";
+const imageUrl = `${siteUrl}${imagePath}`;
+
+const locale = lang === "en" ? "en_US" : "es_ES";
+const alternateLocale = lang === "en" ? "es_ES" : "en_US";
 ---
 
 <!DOCTYPE html>
@@ -15,8 +28,32 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>{title}</title>
-
     <meta name="description" content={description} />
+
+    <link rel="canonical" href={canonicalUrl} />
+
+    <link rel="alternate" hreflang="es" href={alternateEsUrl} />
+    <link rel="alternate" hreflang="en" href={alternateEnUrl} />
+    <link rel="alternate" hreflang="x-default" href={alternateEsUrl} />
+
+    <meta name="author" content="David González Córdoba" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0d6efd" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Portfolio de David González Córdoba" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:alt" content="Captura del portfolio de David González Córdoba" />
+    <meta property="og:locale" content={locale} />
+    <meta property="og:locale:alternate" content={alternateLocale} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
 
     <link rel="icon" href="/images/favicon/favicon.svg" type="image/svg+xml" />
 
