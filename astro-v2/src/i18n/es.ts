@@ -76,9 +76,9 @@ export const es = {
 
     contact: {
         title: "Hablemos",
-        namePlaceholder: "Tu nombre",
-        emailPlaceholder: "tuemail@ejemplo.com",
-        messagePlaceholder: "Escribe tu mensaje...",
+        name: "Tu nombre",
+        email: "tuemail@ejemplo.com",
+        message: "Escribe tu mensaje...",
         submitButton: "Enviar mensaje"
     },
 

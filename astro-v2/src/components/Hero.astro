@@ -6,7 +6,7 @@ const { t } = Astro.props;
     <div class="container d-flex flex-column flex-sm-row align-items-center gap-4 text-center text-sm-start">
         <img
             src="/images/david.webp"
-            alt="Avatar de David González Córdoba"
+            alt="Foto de David González Córdoba"
             class="avatar"
         />
 
@@ -17,7 +17,7 @@ const { t } = Astro.props;
                 target="_blank"
                 rel="noopener"
             >
-                <i class="bi bi-briefcase me-1"></i>
+                <i class="bi bi-briefcase me-1" aria-hidden="true"></i>
                 {t.hero.badge}
             </a>
 
@@ -30,17 +30,17 @@ const { t } = Astro.props;
 
             <div class="d-flex flex-wrap gap-2 justify-content-center justify-content-sm-start">
                 <a href="#proyectos" class="btn btn-primary">
-                    <i class="bi bi-folder2-open me-1"></i>
+                    <i class="bi bi-folder2-open me-1" aria-hidden="true"></i>
                     {t.hero.projectsButton}
                 </a>
 
                 <a
-                    href="/docs/Curriculum_David_Gonzalez_Cordoba_Definitivo.pdf"
+                    href="/docs/Curriculum_David_Gonzalez_Cordoba.pdf"
                     class="btn btn-outline-primary"
                     target="_blank"
                     rel="noopener"
                 >
-                    <i class="bi bi-file-earmark-person me-1"></i>
+                    <i class="bi bi-file-earmark-person me-1" aria-hidden="true"></i>
                     {t.hero.cvButton}
                 </a>
 
@@ -50,7 +50,7 @@ const { t } = Astro.props;
                     target="_blank"
                     rel="noopener"
                 >
-                    <i class="bi bi-github me-1"></i>
+                    <i class="bi bi-github me-1" aria-hidden="true"></i>
                     {t.hero.githubButton}
                 </a>
 
@@ -60,12 +60,12 @@ const { t } = Astro.props;
                     target="_blank"
                     rel="noopener"
                 >
-                    <i class="bi bi-linkedin me-1"></i>
+                    <i class="bi bi-linkedin me-1" aria-hidden="true"></i>
                     {t.hero.linkedinButton}
                 </a>
 
                 <a href="mailto:dgoncor3005@gmail.com" class="btn btn-outline-secondary">
-                    <i class="bi bi-envelope me-1"></i>
+                    <i class="bi bi-envelope me-1" aria-hidden="true"></i>
                     {t.hero.contactButton}
                 </a>
             </div>

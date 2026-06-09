@@ -74,6 +74,10 @@ const alternateLocale = lang === "en" ? "es_ES" : "en_US";
 </head>
 
 <body>
+    <a href="#contenido" class="skip-link">
+        {lang === "en" ? "Skip to main content" : "Saltar al contenido principal"}
+    </a>
+
     <slot />
 
     <script is:inline>

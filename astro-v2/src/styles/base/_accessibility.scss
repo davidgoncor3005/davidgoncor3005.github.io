@@ -1,0 +1,32 @@
+.skip-link {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 9999;
+    padding: .6rem .9rem;
+    border-radius: .5rem;
+    background-color: var(--brand-primary);
+    color: #fff;
+    text-decoration: none;
+    transform: translateY(-200%);
+    transition: transform .2s ease;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+    outline: 3px solid var(--brand-primary);
+    outline-offset: 3px;
+}
+
+.project-card:focus-within,
+.tech-card:focus-within {
+    border-color: var(--brand-primary);
+}

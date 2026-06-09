@@ -76,9 +76,9 @@ export const en = {
 
     contact: {
         title: "Let's have a chat",
-        namePlaceholder: "Your name",
-        emailPlaceholder: "your@email.com",
-        messagePlaceholder: "Write your message...",
+        name: "Your name",
+        email: "your@email.com",
+        message: "Write your message...",
         submitButton: "Send message"
     },
 

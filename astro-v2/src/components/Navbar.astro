@@ -18,7 +18,7 @@ const isEnglish = lang === "en";
             data-bs-target="#nav"
             aria-controls="nav"
             aria-expanded="false"
-            aria-label="Abrir menú"
+            aria-label={lang === "en" ? "Open navigation menu" : "Abrir menú de navegación"}
         >
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -46,10 +46,16 @@ const isEnglish = lang === "en";
                 </li>
 
                 <li class="nav-item ms-lg-4 my-lg-1">
-                    <div class="btn-group btn-group-sm" role="group" aria-label="Selector de idioma">
+                    <div
+                        class="btn-group btn-group-sm"
+                        role="group"
+                        aria-label={lang === "en" ? "Language selector" : "Selector de idioma"}
+                    >
                         <a
                             href="/"
                             class={isSpanish ? "btn btn-outline-primary active" : "btn btn-outline-secondary"}
+                            aria-current={isSpanish ? "page" : undefined}
+                            aria-label="Ver portfolio en español"
                         >
                             ES
                         </a>
@@ -57,6 +63,8 @@ const isEnglish = lang === "en";
                         <a
                             href="/en/"
                             class={isEnglish ? "btn btn-outline-primary active" : "btn btn-outline-secondary"}
+                            aria-current={isEnglish ? "page" : undefined}
+                            aria-label="View portfolio in English"
                         >
                             EN
                         </a>
@@ -68,9 +76,9 @@ const isEnglish = lang === "en";
                         id="themeToggle"
                         class="btn btn-sm btn-outline-secondary"
                         type="button"
-                        aria-label="Cambiar tema"
+                        aria-label={lang === "en" ? "Switch color theme" : "Cambiar tema de color"}
                     >
-                        <i id="themeIcon" class="bi bi-moon"></i>
+                        <i id="themeIcon" class="bi bi-moon" aria-hidden="true"></i>
                     </button>
                 </li>
             </ul>
