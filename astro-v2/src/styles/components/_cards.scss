@@ -1,7 +1,22 @@
 .card {
     border-radius: 1rem;
+    border: 1px solid var(--border-custom);
+}
+
+.card-body {
+    padding: 1.5rem;
 }
 
 .card .badge {
     font-weight: 500;
+}
+
+.section-title .card {
+    transition:
+        transform .2s ease,
+        border-color .2s ease;
+}
+
+.section-title .card:hover {
+    border-color: var(--brand-primary);
 }
