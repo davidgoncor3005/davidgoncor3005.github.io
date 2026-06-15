@@ -36,3 +36,19 @@
     background-color: var(--badge-hover-bg);
     border-color: var(--brand-primary);
 }
+
+@media (max-width: 575.98px) {
+    .tech-list {
+        gap: .45rem;
+    }
+
+    .tech-item {
+        font-size: .82rem;
+        padding: .4rem .6rem;
+    }
+
+    .tech-item img {
+        width: 18px;
+        height: 18px;
+    }
+}

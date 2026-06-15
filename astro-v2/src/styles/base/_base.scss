@@ -9,8 +9,6 @@ body {
 }
 
 .section-title {
-    margin-top: 0;
-    margin-bottom: 0;
     padding-top: 4rem;
     scroll-margin-top: 5rem;
 }
@@ -30,10 +28,25 @@ body {
     background-color: var(--border-custom);
 }
 
-.badge-tech {
-    margin: .15rem;
-}
-
 textarea {
     resize: vertical;
+}
+
+main.container {
+    padding-bottom: 4rem;
+}
+
+@media (max-width: 575.98px) {
+    .section-title {
+        padding-top: 3rem;
+        scroll-margin-top: 4.5rem;
+    }
+
+    .section-title > h2 {
+        font-size: 1.15rem;
+    }
+
+    .section-title > h2::after {
+        display: none;
+    }
 }
