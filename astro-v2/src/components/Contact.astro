@@ -4,62 +4,64 @@ const { t } = Astro.props;
 
 <section id="contacto" class="section-title">
     <h2 class="h4">
-        <i class="bi bi-chat-dots me-2 text-primary"></i>
+        <i class="bi bi-chat-dots me-2 text-primary" aria-hidden="true"></i>
         {t.contact.title}
     </h2>
 
-    <div class="col-lg-12">
-        <form action="https://formspree.io/f/mpqezryz" method="POST">
-            <div class="my-4">
-                <label for="name" class="visually-hidden">
-                    {t.contact.name}
-                </label>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form action="https://formspree.io/f/mpqezryz" method="POST">
+                <div class="mb-4">
+                    <label for="name" class="visually-hidden">
+                        {t.contact.name}
+                    </label>
 
-                <input
-                    type="text"
-                    class="form-control"
-                    id="name"
-                    name="name"
-                    placeholder={t.contact.name}
-                    autocomplete="name"
-                    required
-                />
-            </div>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        name="name"
+                        placeholder={t.contact.name}
+                        autocomplete="name"
+                        required
+                    />
+                </div>
 
-            <div class="mb-4">
-                <label for="email" class="visually-hidden">
-                    {t.contact.email}
-                </label>
+                <div class="mb-4">
+                    <label for="email" class="visually-hidden">
+                        {t.contact.email}
+                    </label>
 
-                <input
-                    type="email"
-                    class="form-control"
-                    id="email"
-                    name="email"
-                    placeholder={t.contact.email}
-                    autocomplete="email"
-                    required
-                />
-            </div>
+                    <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        name="email"
+                        placeholder={t.contact.email}
+                        autocomplete="email"
+                        required
+                    />
+                </div>
 
-            <div class="mb-4">
-                <label for="message" class="visually-hidden">
-                    {t.contact.message}
-                </label>
+                <div class="mb-4">
+                    <label for="message" class="visually-hidden">
+                        {t.contact.message}
+                    </label>
 
-                <textarea
-                    class="form-control"
-                    id="message"
-                    name="message"
-                    rows="5"
-                    placeholder={t.contact.message}
-                    required
-                ></textarea>
-            </div>
+                    <textarea
+                        class="form-control"
+                        id="message"
+                        name="message"
+                        rows="5"
+                        placeholder={t.contact.message}
+                        required
+                    ></textarea>
+                </div>
 
-            <button type="submit" class="col-lg-12 btn btn-primary">
-                {t.contact.submitButton}
-            </button>
-        </form>
+                <button type="submit" class="btn btn-primary w-100">
+                    {t.contact.submitButton}
+                </button>
+            </form>
+        </div>
     </div>
 </section>
