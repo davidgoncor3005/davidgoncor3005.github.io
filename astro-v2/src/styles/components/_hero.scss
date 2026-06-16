@@ -1,0 +1,97 @@
+.hero-section {
+    padding: 5rem 0;
+    background-color: var(--section-bg);
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.hero-avatar-wrapper {
+    flex-shrink: 0;
+}
+
+.hero-subtitle {
+    margin-bottom: .75rem;
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.hero-description {
+    margin-bottom: 1.25rem;
+    color: var(--text-muted-custom);
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .65rem;
+}
+
+.hero-section .avatar {
+    width: 132px;
+    height: 132px;
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.hero-section .avatar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 .75rem 1.5rem rgba(0, 0, 0, .12);
+}
+
+.hero-actions .btn {
+    transition: transform .2s ease;
+}
+
+.hero-actions .btn:hover {
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 3.5rem 0;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        gap: 1.75rem;
+        text-align: center;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .hero-content {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero-section {
+        padding: 3rem 0;
+    }
+
+    .hero-section .avatar {
+        width: 112px;
+        height: 112px;
+    }
+
+    .hero-copy h1 {
+        font-size: 1.75rem;
+    }
+
+    .hero-description {
+        font-size: .95rem;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+}

@@ -12,3 +12,21 @@
     background-color: var(--card-bg);
     color: var(--text-main);
 }
+
+#contacto .form-control {
+    min-height: 48px;
+}
+
+#contacto textarea.form-control {
+    min-height: 160px;
+}
+
+#contacto .btn {
+    min-height: 48px;
+}
+
+@media (max-width: 575.98px) {
+    #contacto .card-body {
+        padding: 1rem;
+    }
+}

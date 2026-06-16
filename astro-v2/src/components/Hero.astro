@@ -2,72 +2,81 @@
 const { t } = Astro.props;
 ---
 
-<header class="py-5 bg-light border-bottom">
-    <div class="container d-flex flex-column flex-sm-row align-items-center gap-4 text-center text-sm-start">
-        <img
-            src="/images/david.webp"
-            alt="Foto de David González Córdoba"
-            class="avatar"
-        />
+<header class="hero-section border-bottom">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-avatar-wrapper">
+                <img
+                    src="/images/david.webp"
+                    alt="Foto de David González Córdoba"
+                    class="avatar"
+                />
+            </div>
 
-        <div>
-            <a
-                href="https://www.linkedin.com/in/david-gonz%C3%A1lez-c%C3%B3rdoba/"
-                class="badge text-bg-success mb-3 text-decoration-none"
-                target="_blank"
-                rel="noopener"
-            >
-                <i class="bi bi-briefcase me-1" aria-hidden="true"></i>
-                {t.hero.badge}
-            </a>
-
-            <h1 class="h2 mb-2">{t.hero.title}</h1>
-
-            <p class="mb-3 text-secondary">
-                <strong>{t.hero.subtitle}</strong><br />
-                {t.hero.description}
-            </p>
-
-            <div class="d-flex flex-wrap gap-2 justify-content-center justify-content-sm-start">
-                <a href="#proyectos" class="btn btn-primary">
-                    <i class="bi bi-folder2-open me-1" aria-hidden="true"></i>
-                    {t.hero.projectsButton}
-                </a>
-
-                <a
-                    href="/docs/Curriculum_David_Gonzalez_Cordoba.pdf"
-                    class="btn btn-outline-primary"
-                    target="_blank"
-                    rel="noopener"
-                >
-                    <i class="bi bi-file-earmark-person me-1" aria-hidden="true"></i>
-                    {t.hero.cvButton}
-                </a>
-
-                <a
-                    href="https://github.com/davidgoncor3005"
-                    class="btn btn-outline-dark"
-                    target="_blank"
-                    rel="noopener"
-                >
-                    <i class="bi bi-github me-1" aria-hidden="true"></i>
-                    {t.hero.githubButton}
-                </a>
-
+            <div class="hero-copy">
                 <a
                     href="https://www.linkedin.com/in/david-gonz%C3%A1lez-c%C3%B3rdoba/"
-                    class="btn btn-outline-info"
+                    class="badge text-bg-success mb-3 text-decoration-none"
                     target="_blank"
                     rel="noopener"
                 >
-                    <i class="bi bi-linkedin me-1" aria-hidden="true"></i>
-                    {t.hero.linkedinButton}
+                    <i class="bi bi-briefcase me-1" aria-hidden="true"></i>
+                    {t.hero.badge}
                 </a>
 
-                <a href="mailto:dgoncor3005@gmail.com" class="btn btn-outline-secondary">
-                    <i class="bi bi-envelope me-1" aria-hidden="true"></i>
-                    {t.hero.contactButton}
-                </a>
+                <h1 class="display-6 fw-bold mb-3">
+                    {t.hero.title}
+                </h1>
+
+                <p class="hero-subtitle">
+                    {t.hero.subtitle}
+                </p>
+
+                <p class="hero-description">
+                    {t.hero.description}
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#proyectos" class="btn btn-primary">
+                        <i class="bi bi-folder2-open me-1" aria-hidden="true"></i>
+                        {t.hero.projectsButton}
+                    </a>
+
+                    <a
+                        href="/docs/Curriculum_David_Gonzalez_Cordoba.pdf"
+                        class="btn btn-outline-primary"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <i class="bi bi-file-earmark-person me-1" aria-hidden="true"></i>
+                        {t.hero.cvButton}
+                    </a>
+
+                    <a
+                        href="https://github.com/davidgoncor3005"
+                        class="btn btn-outline-dark"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <i class="bi bi-github me-1" aria-hidden="true"></i>
+                        {t.hero.githubButton}
+                    </a>
+
+                    <a
+                        href="https://www.linkedin.com/in/david-gonz%C3%A1lez-c%C3%B3rdoba/"
+                        class="btn btn-outline-info"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <i class="bi bi-linkedin me-1" aria-hidden="true"></i>
+                        {t.hero.linkedinButton}
+                    </a>
+
+                    <a href="mailto:dgoncor3005@gmail.com" class="btn btn-outline-secondary">
+                        <i class="bi bi-envelope me-1" aria-hidden="true"></i>
+                        {t.hero.contactButton}
+                    </a>
+                </div>
             </div>
         </div>
     </div>

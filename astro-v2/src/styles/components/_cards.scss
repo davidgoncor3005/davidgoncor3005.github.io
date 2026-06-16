@@ -2,6 +2,10 @@
     border-radius: 1rem;
 }
 
-.card .badge {
-    font-weight: 500;
+.card-body {
+    padding: 1.5rem;
+}
+
+.section-title .card:hover {
+    border-color: var(--brand-primary);
 }
