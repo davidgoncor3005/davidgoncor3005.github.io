@@ -1,59 +1,184 @@
-.navbar-brand {
-    letter-spacing: .3px;
-}
-
-#themeToggle {
-    border-radius: 999px;
-}
-
-.navbar {
+.portfolio-navbar {
     position: sticky;
-    top: 0;
+    top: 0.5rem;
     z-index: 1030;
+    padding: .75rem 1rem;
 }
 
-.navbar .navbar-collapse {
-    padding-top: .75rem;
+.portfolio-navbar__inner {
+    width: fit-content;
+    max-width: min(100%, 1100px);
+    margin: 0 auto;
+    padding: .50rem 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: .6rem 1.2rem;
+    border: 1px solid var(--border-custom);
+    border-radius: 999px;
+    background-color: var(--card-bg);
+    background-color: color-mix(in srgb, var(--card-bg) 80%, transparent);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 .75rem 1rem rgba(15, 23, 42, .08);
 }
 
-.nav-link {
-    border-radius: .75rem;
+.portfolio-navbar__links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: .25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-.nav-link:hover {
+.portfolio-navbar__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: .55rem .75rem;
+    border-radius: 999px;
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: .95rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.portfolio-navbar__link:hover {
+    color: var(--brand-primary);
     background-color: var(--badge-bg);
 }
 
-@media (min-width: 992px) {
-    .navbar .navbar-collapse {
-        padding-top: 0;
+.portfolio-navbar__divider {
+    color: var(--border-custom);
+    font-weight: 700;
+    user-select: none;
+}
+
+.portfolio-navbar__controls {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: .8rem;
+}
+
+.lang-group {
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+    padding: .2rem;
+    border-radius: 999px;
+    background-color: var(--badge-bg);
+}
+
+.lang-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.5rem;
+    padding: .48rem .6rem;
+    border-radius: 999px;
+    color: var(--text-muted-custom);
+    text-decoration: none;
+    font-size: .82rem;
+    font-weight: 700;
+    line-height: 1;
+    transition:
+        color .2s ease,
+        background-color .2s ease;
+}
+
+.lang-link:hover {
+    color: var(--brand-primary);
+    background-color: var(--card-bg);
+}
+
+.lang-link.is-active {
+    color: #ffffff;
+    background-color: var(--brand-primary);
+}
+
+.theme-toggle {
+    width: 2.25rem;
+    height: 2.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 999px;
+    background-color: transparent;
+    color: var(--text-main);
+    cursor: pointer;
+    transition:
+        color .2s ease,
+        background-color .2s ease;
+}
+
+.theme-toggle i {
+    font-size: 1.08rem;
+    transition: transform .2s ease;
+}
+
+.theme-toggle:hover {
+    color: var(--brand-primary);
+    background-color: var(--badge-bg);
+}
+
+.theme-toggle:hover i {
+    transform: scale(1.13);
+}
+
+@media (max-width: 768px) {
+    .portfolio-navbar {
+        top: .5rem;
+        padding: .5rem .75rem;
     }
 
-    .navbar-nav {
-        align-items: center;
+    .portfolio-navbar__inner {
+        width: 100%;
+        border-radius: 1.5rem;
+        padding: .5rem;
+        gap: .5rem .35rem;
+    }
+
+    .portfolio-navbar__link {
+        padding: .48rem .55rem;
+        font-size: .86rem;
+    }
+
+    .portfolio-navbar__controls {
+        gap: .65rem;
+    }
+
+    .lang-link {
+        min-width: 2.15rem;
+        padding: .35rem .5rem;
+        font-size: .78rem;
     }
 }
 
-@media (max-width: 991.98px) {
-    .navbar-nav {
-        gap: .35rem;
-        padding: .75rem 0 .25rem;
+@media (max-width: 420px) {
+    .portfolio-navbar__inner {
+        justify-content: center;
     }
 
-    .nav-link {
-        padding: .65rem;
+    .portfolio-navbar__links {
+        gap: .15rem;
     }
 
-    .navbar .btn-group {
-        width: 100%;
+    .portfolio-navbar__link {
+        padding: .45rem .48rem;
+        font-size: .8rem;
     }
 
-    .navbar .btn-group .btn {
-        flex: 1;
-    }
-
-    #themeToggle {
-        width: 100%;
-        min-height: 2.4rem;
+    .portfolio-navbar__divider {
+        display: none;
     }
 }

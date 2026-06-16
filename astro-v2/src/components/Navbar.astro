@@ -5,83 +5,78 @@ const isSpanish = lang === "es";
 const isEnglish = lang === "en";
 ---
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom">
-    <div class="container">
-        <a class="navbar-brand fw-semibold" href={isSpanish ? "/" : "/en/"}>
-            David González Córdoba
-        </a>
+<nav
+    class="portfolio-navbar"
+    aria-label={lang === "en" ? "Main navigation" : "Navegación principal"}
+>
+    <div class="portfolio-navbar__inner">
+        <ul class="portfolio-navbar__links">
+            <li>
+                <a class="portfolio-navbar__link" href="#sobre-mi">
+                    {t.nav.about}
+                </a>
+            </li>
 
-        <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#nav"
-            aria-controls="nav"
-            aria-expanded="false"
-            aria-label={lang === "en" ? "Open navigation menu" : "Abrir menú de navegación"}
-        >
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <li>
+                <a class="portfolio-navbar__link" href="#experiencia">
+                    {t.nav.experience}
+                </a>
+            </li>
 
-        <div id="nav" class="collapse navbar-collapse">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#sobre-mi">{t.nav.about}</a>
-                </li>
+            <li>
+                <a class="portfolio-navbar__link" href="#tecnologias">
+                    {t.nav.technologies}
+                </a>
+            </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#experiencia">{t.nav.experience}</a>
-                </li>
+            <li>
+                <a class="portfolio-navbar__link" href="#proyectos">
+                    {t.nav.projects}
+                </a>
+            </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#tecnologias">{t.nav.technologies}</a>
-                </li>
+            <li>
+                <a class="portfolio-navbar__link" href="#contacto">
+                    {t.nav.contact}
+                </a>
+            </li>
+        </ul>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#proyectos">{t.nav.projects}</a>
-                </li>
+        <span class="portfolio-navbar__divider" aria-hidden="true">|</span>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#contacto">{t.nav.contact}</a>
-                </li>
+        <div class="portfolio-navbar__controls">
+            <div
+                class="lang-group"
+                role="group"
+                aria-label={lang === "en" ? "Language selector" : "Selector de idioma"}
+            >
+                <a
+                    href="/"
+                    class={isSpanish ? "lang-link is-active" : "lang-link"}
+                    aria-current={isSpanish ? "page" : undefined}
+                    aria-label="Ver portfolio en español"
+                >
+                    ES
+                </a>
 
-                <li class="nav-item ms-lg-4 my-lg-1">
-                    <div
-                        class="btn-group btn-group-sm"
-                        role="group"
-                        aria-label={lang === "en" ? "Language selector" : "Selector de idioma"}
-                    >
-                        <a
-                            href="/"
-                            class={isSpanish ? "btn btn-outline-primary active" : "btn btn-outline-secondary"}
-                            aria-current={isSpanish ? "page" : undefined}
-                            aria-label="Ver portfolio en español"
-                        >
-                            ES
-                        </a>
+                <a
+                    href="/en/"
+                    class={isEnglish ? "lang-link is-active" : "lang-link"}
+                    aria-current={isEnglish ? "page" : undefined}
+                    aria-label="View portfolio in English"
+                >
+                    EN
+                </a>
+            </div>
 
-                        <a
-                            href="/en/"
-                            class={isEnglish ? "btn btn-outline-primary active" : "btn btn-outline-secondary"}
-                            aria-current={isEnglish ? "page" : undefined}
-                            aria-label="View portfolio in English"
-                        >
-                            EN
-                        </a>
-                    </div>
-                </li>
-
-                <li class="nav-item ms-lg-2 my-lg-1 mt-2">
-                    <button
-                        id="themeToggle"
-                        class="btn btn-sm btn-outline-secondary"
-                        type="button"
-                        aria-label={lang === "en" ? "Switch color theme" : "Cambiar tema de color"}
-                    >
-                        <i id="themeIcon" class="bi bi-moon" aria-hidden="true"></i>
-                    </button>
-                </li>
-            </ul>
+            <button
+                id="themeToggle"
+                class="theme-toggle"
+                type="button"
+                aria-label={lang === "en" ? "Switch color theme" : "Cambiar tema de color"}
+            >
+                <i id="themeIcon" class="bi bi-moon" aria-hidden="true"></i>
+            </button>
         </div>
     </div>
 </nav>
