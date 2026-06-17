@@ -1,23 +1,39 @@
 :root {
-    --brand-primary: #0d6efd;   /* Borde general de la página */
-    --page-bg: #ffffff;         /* Fondo general de la página */
-    --section-bg: #f8f9fa;      /* Fondo de secciones */
-    --card-bg: #ffffff;         /* Fondo de las cards */
-    --text-main: #212529;       /* Color principal del texto */
-    --text-muted-custom: #6c757d; /* Color para texto secundario y placeholders */
-    --border-custom: #dee2e6;   /* Color para bordes personalizados */
-    --badge-bg: #f8f9fa;        /* Fondo para tecnologías */
-    --badge-hover-bg: #eef4ff; /* Fondo de las tecnologías al pasar el mouse */
+    --brand-primary: #2563eb; /* Color principal: botones, enlaces y elementos importantes */
+    --brand-secondary: #7c3aed; /* Color secundario: elementos destacados */
+    --brand-accent: #14b8a6; /* Color de apoyo: estados positivos */
+
+    --page-bg: #f8fafc; /* Fondo general de la página */
+    --section-bg: #f1f5f9; /* Fondo de secciones */
+    --card-bg: #ffffff; /* Fondo de tarjetas, formularios y contenedores */
+
+    --text-main: #0f172a; /* Color principal del texto */
+    --text-muted-custom: #475569; /* Color de texto secundario */
+
+    --border-custom: #cbd5e1; /* Color de bordes suaves */
+
+    --badge-bg: #eef2ff; /* Fondo de badges */
+    --badge-hover-bg: #dbeafe; /* Fondo de badges al pasar el ratón */
+
+    --shadow-soft: 0 .75rem 2rem rgba(15, 23, 42, .08); /* Sombra suave para cards o navbar */
 }
 
 [data-theme="dark"] {
-    --brand-primary: #6ea8fe;
-    --page-bg: #121417;
-    --section-bg: #1b1f24;
-    --card-bg: #1f242b;
-    --text-main: #f1f3f5;
-    --text-muted-custom: #adb5bd;
-    --border-custom: #343a40;
-    --badge-bg: #2b3035;
-    --badge-hover-bg: #243447;
+    --brand-primary: #60a5fa;
+    --brand-secondary: #a78bfa;
+    --brand-accent: #2dd4bf;
+
+    --page-bg: #0b1120;
+    --section-bg: #111827;
+    --card-bg: #1e293b;
+
+    --text-main: #e5e7eb;
+    --text-muted-custom: #94a3b8;
+
+    --border-custom: #334155;
+
+    --badge-bg: #172033;
+    --badge-hover-bg: #1e3a5f;
+
+    --shadow-soft: 0 .75rem 2rem rgba(0, 0, 0, .28);
 }

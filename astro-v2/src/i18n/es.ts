@@ -83,7 +83,7 @@ export const es = {
     },
 
     footer: {
-        text: "David González Córdoba. Todos los derechos reservados."
+        text: "David González Córdoba"
     },
 
     language: {

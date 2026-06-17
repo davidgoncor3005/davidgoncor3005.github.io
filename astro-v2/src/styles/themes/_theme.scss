@@ -1,5 +1,6 @@
-.bg-body-tertiary {
-    background-color: var(--section-bg) !important;
+body {
+    background-color: var(--page-bg);
+    color: var(--text-main);
 }
 
 .card {
@@ -18,8 +19,10 @@
     color: var(--text-muted-custom) !important;
 }
 
-.navbar-brand,
-.nav-link,
+.text-primary {
+    color: var(--brand-primary) !important;
+}
+
 h1,
 h2,
 h3,
@@ -29,12 +32,42 @@ h6 {
     color: var(--text-main);
 }
 
+.btn-primary {
+    border-color: var(--brand-primary);
+    background-color: var(--brand-primary);
+}
+
+.btn-primary:hover {
+    border-color: var(--brand-secondary);
+    background-color: var(--brand-secondary);
+}
+
+.btn-outline-primary {
+    color: var(--brand-primary);
+    border-color: var(--brand-primary);
+}
+
+.btn-outline-primary:hover {
+    color: #ffffff;
+    border-color: var(--brand-primary);
+    background-color: var(--brand-primary);
+}
+
+.text-bg-success {
+    background-color: var(--brand-accent) !important;
+}
+
+::selection {
+    background-color: var(--brand-primary);
+    color: #ffffff;
+}
+
 [data-theme="dark"] .btn-outline-dark {
-    color: #f8f9fa;
-    border-color: #f8f9fa;
+    color: #f8fafc;
+    border-color: #f8fafc;
 }
 
 [data-theme="dark"] .btn-outline-dark:hover {
-    color: #121417;
-    background-color: #f8f9fa;
+    color: #0b1120;
+    background-color: #f8fafc;
 }
