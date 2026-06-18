@@ -10,8 +10,13 @@ const { t } = Astro.props;
 
     <div class="card shadow-sm">
         <div class="card-body">
-            <p class="mb-3">
-                {t.about.paragraph}
+            <p>
+                {t.about.intro.beforeBackend}
+                <span class="text-highlight-about">{t.about.intro.backend}</span>{t.about.intro.beforeFrontend}
+                <span class="text-highlight-about">{t.about.intro.frontend}</span>{t.about.intro.beforeDatabases}
+                <span class="text-highlight-about">{t.about.intro.databases}</span>{t.about.intro.beforeDocumentation}
+                <span class="text-highlight-about">{t.about.intro.documentation}</span>{t.about.intro.beforeDeployment}
+                <span class="text-highlight-about">{t.about.intro.deployment}</span>{t.about.intro.end}
             </p>
 
             <ul class="mb-0">

@@ -8,7 +8,7 @@ const { t } = Astro.props;
             <div class="hero-avatar-wrapper">
                 <img
                     src="/images/david.webp"
-                    alt="Foto de David González Córdoba"
+                    alt={t.hero.avatarAlt}
                     class="avatar"
                 />
             </div>
@@ -16,16 +16,19 @@ const { t } = Astro.props;
             <div class="hero-copy">
                 <a
                     href="https://www.linkedin.com/in/david-gonz%C3%A1lez-c%C3%B3rdoba/"
-                    class="badge text-bg-success mb-3 text-decoration-none"
+                    class="hero-status text-decoration-none"
                     target="_blank"
                     rel="noopener"
                 >
                     <i class="bi bi-briefcase me-1" aria-hidden="true"></i>
-                    {t.hero.badge}
+                    <span>{t.hero.badge}</span>
                 </a>
 
                 <h1 class="display-6 fw-bold mb-3">
-                    {t.hero.title}
+                    {t.hero.titlePrefix}
+                    <span class="hero-title-name">
+                        {t.hero.name}
+                    </span>
                 </h1>
 
                 <p class="hero-subtitle">

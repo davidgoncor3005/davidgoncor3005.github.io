@@ -15,7 +15,9 @@ export const en = {
 
     hero: {
         badge: "Open to work",
-        title: "Hi! I'm David González Córdoba",
+        titlePrefix: "Hi! I'm",
+        name: "David González Córdoba",
+        avatarAlt: "Photo of David González Córdoba",
         subtitle: "Junior Web Developer | Higher Degree in Web Application Development.",
         description:
             "I enjoy building useful, well-structured and maintainable web applications. I am focused on growing as a developer and applying real development, documentation and deployment best practices.",
@@ -28,8 +30,19 @@ export const en = {
 
     about: {
         title: "About me",
-        paragraph:
-            "I am a junior web developer especially interested in backend development with Java, Spring Boot and REST APIs, while also working with frontend, databases, documentation and deployment.",
+        intro: {
+            beforeBackend: "I am a junior web developer especially interested in ",
+            backend: "backend development with Java, Spring Boot and REST APIs",
+            beforeFrontend: ", while also working with ",
+            frontend: "frontend",
+            beforeDatabases: ", ",
+            databases: "databases",
+            beforeDocumentation: ", ",
+            documentation: "documentation",
+            beforeDeployment: " and ",
+            deployment: "deployment",
+            end: "."
+        },
         points: [
             "I stand out for my positive attitude, adaptability and willingness to keep learning.",
             "My goal is to join a development team, contribute to real projects and keep growing professionally."
@@ -83,7 +96,7 @@ export const en = {
     },
 
     footer: {
-        text: "David González Córdoba. All rights reserved."
+        text: "David González Córdoba"
     },
 
     language: {

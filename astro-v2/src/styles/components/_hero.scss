@@ -13,6 +13,59 @@
     flex-shrink: 0;
 }
 
+.hero-title-name {
+    color: var(--brand-primary);
+}
+
+.hero-status {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    margin-bottom: 1rem;
+    padding: .30rem .8rem;
+    border: 0;
+    border-radius: 999px;
+    background-color: transparent;
+    color: var(--text-main);
+    font-size: .9rem;
+    font-weight: 700;
+    transition: transform .2s ease;
+}
+
+.hero-status:hover {
+    transform: scale(1.04);
+}
+
+.hero-status::before {
+    content: "";
+    position: absolute;
+    inset: -1000%;
+    z-index: -2;
+    background: conic-gradient(
+        from 90deg at 50% 50%,
+        #51e4b8 0%,
+        #21554e 50%,
+        #51e4b8 100%
+    );
+    animation: hero-status-spin 2s linear infinite;
+}
+
+.hero-status::after {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    z-index: -1;
+    border-radius: inherit;
+    background-color: color-mix(in srgb, var(--brand-accent) 12%, var(--card-bg));
+}
+
+.hero-status i {
+    color: var(--brand-accent);
+}
+
 .hero-subtitle {
     margin-bottom: .75rem;
     color: var(--text-main);
@@ -40,7 +93,7 @@
 
 .hero-section .avatar:hover {
     transform: translateY(-3px);
-    box-shadow: 0 .75rem 1.5rem rgba(0, 0, 0, .12);
+    box-shadow: var(--shadow-soft);
 }
 
 .hero-actions .btn {
@@ -49,6 +102,34 @@
 
 .hero-actions .btn:hover {
     transform: translateY(-2px);
+}
+
+@keyframes hero-status-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-status::before {
+        animation: none;
+    }
+
+    .hero-section .avatar,
+    .hero-actions .btn {
+        transition: none;
+    }
+
+    .hero-section .avatar:hover,
+    .hero-actions .btn:hover {
+        transform: none;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .hero-content {
+        gap: 2rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -62,14 +143,9 @@
         text-align: center;
     }
 
+    .hero-status,
     .hero-actions {
         justify-content: center;
-    }
-}
-
-@media (max-width: 991.98px) {
-    .hero-content {
-        gap: 2rem;
     }
 }
 
