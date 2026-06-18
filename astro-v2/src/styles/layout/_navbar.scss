@@ -41,6 +41,7 @@
     align-items: center;
     justify-content: center;
     padding: .55rem .75rem;
+    border: 1px solid transparent;
     border-radius: 999px;
     color: var(--text-main);
     text-decoration: none;
@@ -49,7 +50,8 @@
     line-height: 1;
 }
 
-.portfolio-navbar__link:hover {
+.portfolio-navbar__link:hover,
+.portfolio-navbar__link.is-active {
     color: var(--brand-primary);
     background-color: var(--badge-bg);
 }
