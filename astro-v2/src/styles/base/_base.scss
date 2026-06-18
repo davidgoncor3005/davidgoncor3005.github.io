@@ -4,8 +4,6 @@ html {
 
 body {
     font-feature-settings: "kern"; /* Para mejorar el espaciado entre caracteres */
-    background-color: var(--page-bg);
-    color: var(--text-main);
 }
 
 .section-title {
@@ -34,6 +32,11 @@ textarea {
 
 main.container {
     padding-bottom: 4rem;
+}
+
+.text-highlight-about {
+    color: var(--brand-secondary);
+    font-weight: 700;
 }
 
 @media (max-width: 575.98px) {

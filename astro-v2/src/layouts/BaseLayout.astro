@@ -108,5 +108,62 @@ const alternateLocale = lang === "en" ? "es_ES" : "en_US";
             }
         }
     </script>
+    <script is:inline>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Selecciona todos los enlaces del navbar que apuntan a secciones
+            const navLinks = document.querySelectorAll('.portfolio-navbar__link[href^="#"]');
+
+            // Convierte esos enlaces en secciones reales
+            const sections = Array.from(navLinks)
+                .map((link) => document.querySelector(link.getAttribute('href')))
+                .filter(Boolean);
+
+            // Quita la clase activa de todos los enlaces del navbar
+            function clearActiveLinks() {
+                navLinks.forEach((link) => link.classList.remove('is-active'));
+            }
+
+            // Marca como activo el enlace que corresponde a la sección visible
+            function setActiveLink(sectionId) {
+                clearActiveLinks();
+
+                const activeLink = document.querySelector(
+                    `.portfolio-navbar__link[href="#${sectionId}"]`
+                );
+
+                if (activeLink) {
+                    activeLink.classList.add('is-active');
+                }
+            }
+
+            // Detecta qué sección está más cerca de la parte superior visible
+            function updateActiveSection() {
+                let currentSectionId = null;
+
+                sections.forEach((section) => {
+                    const sectionTop = section.getBoundingClientRect().top;
+
+                    // 160px deja margen para el navbar sticky y evita activar demasiado pronto
+                    if (sectionTop <= 160) {
+                        currentSectionId = section.getAttribute('id');
+                    }
+                });
+
+                // Si todavía estamos en el hero, no se marca ninguna sección
+                if (!currentSectionId) {
+                    clearActiveLinks();
+                    return;
+                }
+
+                setActiveLink(currentSectionId);
+            }
+
+            // Ejecuta al cargar la página
+            updateActiveSection();
+
+            // Ejecuta al hacer scroll
+            window.addEventListener('scroll', updateActiveSection, { passive: true });
+        });
+    </script>
 </body>
 </html>
