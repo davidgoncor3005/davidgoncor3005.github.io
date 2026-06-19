@@ -85,7 +85,7 @@ const alternateLocale = lang === "en" ? "es_ES" : "en_US";
         const themeIcon = document.getElementById('themeIcon');
 
         if (themeToggle && themeIcon) {
-            const savedTheme = localStorage.getItem('theme') || 'light';
+            const savedTheme = localStorage.getItem('theme') || 'dark';
 
             document.documentElement.setAttribute('data-theme', savedTheme);
             updateThemeIcon(savedTheme);
