@@ -39,6 +39,13 @@ main.container {
     font-weight: 700;
 }
 
+.about-list {
+    display: grid;
+    gap: .6rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
 @media (max-width: 575.98px) {
     .section-title {
         padding-top: 3rem;
