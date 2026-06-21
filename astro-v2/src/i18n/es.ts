@@ -51,30 +51,34 @@ export const es = {
 
     experience: {
         title: "Experiencia laboral",
-        ntt: {
-            role: "Desarrollador Web Junior",
-            company: "NTT DATA Américo Vespucio · Contrato de prácticas",
-            date: "2025 - 2026 · Sevilla, Andalucía, España",
-            description:
-                "Prácticas formativas en desarrollo de aplicaciones web, participando en tareas relacionadas con backend, APIs REST y resolución de incidencias técnicas.",
-            tasks: [
-                "Desarrollo y mantenimiento de APIs REST con Spring Boot.",
-                "Documentación y pruebas de endpoints con OpenAPI/Swagger y Postman.",
-                "Uso de Git/GitHub, bases de datos y operaciones CRUD en entornos de desarrollo."
-            ]
-        },
-        gines: {
-            role: "Técnico de sistemas informáticos",
-            company: "Departamento Informática Ayuntamiento de Gines · Contrato de prácticas",
-            date: "2024 · Gines, Andalucía, España",
-            description:
-                "Prácticas formativas en el área de sistemas informáticos y soporte técnico.",
-            tasks: [
-                "Resolución de incidencias hardware y software en remoto y presencial.",
-                "Instalación, actualización y mantenimiento de equipos.",
-                "Atención a usuarios y apoyo en tareas del entorno técnico."
-            ]
-        }
+        items: [
+            {
+                role: "Desarrollador de aplicaciones web",
+                company: "NTT DATA Américo Vespucio",
+                date: "Abril 2025 - Mayo 2026",
+                icon: "bi bi-code-slash",
+                description:
+                    "Prácticas formativas en desarrollo de aplicaciones web, participando en tareas relacionadas con backend, APIs REST y resolución de incidencias técnicas.",
+                tasks: [
+                    "Desarrollo y mantenimiento de APIs REST con Spring Boot.",
+                    "Documentación y pruebas de endpoints con OpenAPI/Swagger y Postman.",
+                    "Uso de Git/GitHub, bases de datos y operaciones CRUD en entornos de desarrollo."
+                ]
+            },
+            {
+                role: "Técnico de sistemas informáticos",
+                company: "Departamento de Informática del Ayuntamiento de Gines",
+                date: "Marzo 2024 - Junio 2024",
+                icon: "bi bi-pc-display-horizontal",
+                description:
+                    "Prácticas formativas en el área de sistemas informáticos, realizando soporte técnico y mantenimiento de equipos.",
+                tasks: [
+                    "Resolución de incidencias hardware y software en remoto y presencial.",
+                    "Instalación, actualización y mantenimiento de equipos.",
+                    "Atención a usuarios y apoyo en tareas del entorno técnico."
+                ]
+            }
+        ]
     },
 
     technologies: {
