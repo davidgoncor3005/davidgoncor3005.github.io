@@ -51,30 +51,34 @@ export const en = {
 
     experience: {
         title: "Work experience",
-        ntt: {
-            role: "Junior Web Developer",
-            company: "NTT DATA Américo Vespucio · Internship contract",
-            date: "2025 - 2026 · Seville, Andalusia, Spain",
-            description:
-                "Training internship in web application development, participating in backend tasks, REST APIs and technical issue resolution.",
-            tasks: [
-                "Development and maintenance of REST APIs with Spring Boot.",
-                "Documentation and endpoint testing with OpenAPI/Swagger and Postman.",
-                "Use of Git/GitHub, databases and CRUD operations in development environments."
-            ]
-        },
-        gines: {
-            role: "IT Systems Technician",
-            company: "IT Department of Gines Town Council · Internship contract",
-            date: "2024 · Gines, Andalusia, Spain",
-            description:
-                "Training internship in IT systems and technical support.",
-            tasks: [
-                "Remote and on-site hardware and software issue resolution.",
-                "Installation, update and maintenance of computer equipment.",
-                "User support and assistance with technical tasks."
-            ]
-        }
+        items: [
+            {
+                role: "Web Application Developer",
+                company: "NTT DATA Américo Vespucio",
+                date: "Apr. 2025 - May 2026",
+                icon: "bi bi-code-slash",
+                description:
+                    "Training internship in web application development, participating in backend tasks, REST APIs and technical issue resolution.",
+                tasks: [
+                    "Development and maintenance of REST APIs with Spring Boot.",
+                    "Documentation and endpoint testing with OpenAPI/Swagger and Postman.",
+                    "Use of Git/GitHub, databases and CRUD operations in development environments."
+                ]
+            },
+            {
+                role: "IT Systems Technician",
+                company: "IT Department of Gines Town Council",
+                date: "Mar. 2024 - Jun. 2024",
+                icon: "bi bi-pc-display-horizontal",
+                description:
+                    "Training internship in IT systems, focused on technical support and equipment maintenance.",
+                tasks: [
+                    "Remote and on-site hardware and software issue resolution.",
+                    "Installation, update and maintenance of computer equipment.",
+                    "User support and assistance with technical environment tasks."
+                ]
+            }
+        ]
     },
 
     technologies: {
