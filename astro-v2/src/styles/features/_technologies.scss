@@ -1,0 +1,134 @@
+.technologies-section {
+    padding: 0 0 2rem;
+}
+
+.technologies-title {
+    margin: 0 0 2rem;
+}
+
+.technologies-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 72rem;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+.technologies-group {
+    padding: 1.25rem;
+    border: 1px solid var(--border-custom);
+    border-radius: 1rem;
+    background-color: var(--card-bg);
+    box-shadow: var(--shadow-soft);
+    text-align: center;
+}
+
+.technologies-group:nth-child(3) {
+    grid-column: 1 / -1;
+}
+
+.technologies-group h2 {
+    margin: 0 0 1rem;
+    color: var(--text-main);
+    font-family: var(--font-title);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.technologies-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .6rem;
+}
+
+.technologies-group:nth-child(3) .technologies-list {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.technologies-item {
+    display: grid;
+    min-width: 0;
+    min-height: 5.5rem;
+    padding: .65rem .4rem;
+    place-items: center;
+    gap: .45rem;
+    border: 1px solid var(--border-custom);
+    border-radius: .75rem;
+    background-color: var(--badge-bg);
+    color: var(--text-main);
+    font-size: .78rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    transition: border-color .2s ease, transform .2s ease;
+}
+
+.technologies-name {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+.technologies-item:hover {
+    border-color: var(--tech-accent);
+    transform: translateY(-2px);
+}
+
+.technologies-icon {
+    display: grid;
+    width: 3rem;
+    height: 3rem;
+    place-items: center;
+    border-radius: .7rem;
+    background-color: var(--tech-accent);
+}
+
+.technologies-icon svg {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: #fff;
+}
+
+@media (max-width: 991.98px) {
+    .technologies-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .technologies-group:nth-child(3) {
+        grid-column: auto;
+    }
+
+    .technologies-list,
+    .technologies-group:nth-child(3) .technologies-list {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 575.98px) {
+    .technologies-section {
+        padding: 1rem 0 1.5rem;
+    }
+
+    .technologies-title {
+        margin-bottom: 1.5rem;
+    }
+
+    .technologies-group {
+        padding: 1rem;
+    }
+
+    .technologies-list,
+    .technologies-group:nth-child(3) .technologies-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .technologies-item {
+        min-height: 5rem;
+        font-size: .75rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .technologies-item {
+        transition: none;
+    }
+}
