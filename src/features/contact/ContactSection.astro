@@ -1,0 +1,108 @@
+---
+import type { Translations } from "../../i18n";
+import { profile } from "../../config/profile";
+
+interface Props {
+    t: Translations;
+}
+
+const { t } = Astro.props as Props;
+
+---
+
+<section class="contact-section" aria-labelledby="contact-title">
+    <div class="contact-layout">
+        <header class="contact-intro">
+            <h1 id="contact-title" class="section-title">{t.contact.title}</h1>
+            <p>{t.contact.description}</p>
+        </header>
+
+        <form
+            class="contact-form"
+            action="https://formspree.io/f/mpqezryz"
+            method="POST"
+        >
+            <div class="contact-field">
+                <label for="name">{t.contact.name}</label>
+                <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    placeholder={t.contact.namePlaceholder}
+                    autocomplete="name"
+                    minlength="2"
+                    required
+                />
+            </div>
+
+            <div class="contact-field">
+                <label for="email">{t.contact.email}</label>
+                <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder={t.contact.emailPlaceholder}
+                    autocomplete="email"
+                    required
+                />
+            </div>
+
+            <div class="contact-field">
+                <label for="message">{t.contact.message}</label>
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="6"
+                    placeholder={t.contact.messagePlaceholder}
+                    minlength="10"
+                    required
+                ></textarea>
+            </div>
+
+            <button type="submit" class="contact-submit">
+                <i class="bi bi-send" aria-hidden="true"></i>
+                <span>{t.contact.submitButton}</span>
+            </button>
+        </form>
+
+        <footer class="contact-channels">
+            <div class="contact-details">
+                <a href={`mailto:${profile.email}`}>
+                    <span>
+                        <small>{t.contact.emailLabel}</small>
+                        <p>{profile.email}</p>
+                    </span>
+                </a>
+
+                <div>
+                    <span>
+                        <small>{t.contact.locationLabel}</small>
+                        <p>{t.contact.location}</p>
+                    </span>
+                </div>
+            </div>
+
+            <div class="contact-social">
+                <span>{t.contact.findMe}</span>
+                <div>
+                    <a
+                        href={profile.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub"
+                    >
+                        <i class="bi bi-github" aria-hidden="true"></i>
+                    </a>
+                    <a
+                        href={profile.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn"
+                    >
+                        <i class="bi bi-linkedin" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</section>

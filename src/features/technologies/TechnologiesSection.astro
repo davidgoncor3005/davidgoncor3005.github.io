@@ -1,0 +1,47 @@
+---
+import type { Lang, Translations } from "../../i18n";
+import type { TechnologyCategory } from "../../types/portfolio";
+import {
+    getTechnologyColor,
+    getTechnologyPaths,
+    getTechnologyViewBox,
+    hasTechnologyIcon,
+} from "../../utils/technology";
+
+interface Props {
+    t: Translations;
+    technologies: readonly TechnologyCategory[];
+    lang: Lang;
+}
+
+const { t, technologies, lang } = Astro.props as Props;
+---
+
+<section class="technologies-section" aria-labelledby="technologies-title">
+    <h1 id="technologies-title" class="section-title technologies-title">{t.technologies.title}</h1>
+
+    <div class="technologies-grid">
+        {technologies.map((category) => (
+            <article class="technologies-group">
+                <h2>{category.category[lang]}</h2>
+                <div class="technologies-list">
+                    {category.items.map((technology) => (
+                        <span
+                            class="technologies-item"
+                            style={`--tech-accent: ${getTechnologyColor(technology.name)}`}
+                        >
+                            {hasTechnologyIcon(technology.name) && (
+                                <span class="technologies-icon" aria-hidden="true">
+                                    <svg viewBox={getTechnologyViewBox(technology.name)} focusable="false">
+                                        {getTechnologyPaths(technology.name).map((path) => typeof path === "string" ? <path d={path}></path> : <path d={path.d} fill={path.fill}></path>)}
+                                    </svg>
+                                </span>
+                            )}
+                            <span class="technologies-name">{technology.name}</span>
+                        </span>
+                    ))}
+                </div>
+            </article>
+        ))}
+    </div>
+</section>

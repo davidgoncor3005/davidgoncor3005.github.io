@@ -1,0 +1,107 @@
+---
+import "../styles/main.scss";
+import type { Lang } from "../i18n";
+
+interface Props {
+    title: string;
+    description: string;
+    siteName: string;
+    imageAlt: string;
+    skipLink: string;
+    lang: Lang;
+    path: string;
+    alternateEsPath: string;
+    alternateEnPath: string;
+}
+
+const {
+    title,
+    description,
+    siteName,
+    imageAlt,
+    skipLink,
+    lang,
+    path,
+    alternateEsPath,
+    alternateEnPath,
+} = Astro.props as Props;
+
+const siteUrl = (Astro.site ?? new URL("https://davidgonzalezcordoba-dev.vercel.app")).toString().replace(/\/$/, "");
+const canonicalUrl = `${siteUrl}${path}`;
+const imageUrl = `${siteUrl}/images/social/portfolio-og.webp`;
+const locale = lang === "en" ? "en_US" : "es_ES";
+const alternateLocale = lang === "en" ? "es_ES" : "en_US";
+---
+
+<!DOCTYPE html>
+<html lang={lang} data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script is:inline>
+        (() => {
+            let theme = "dark";
+            try {
+                const saved = localStorage.getItem("theme");
+                if (saved === "light" || saved === "dark") theme = saved;
+            } catch {}
+
+            document.documentElement.dataset.theme = theme;
+        })();
+    </script>
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="David González Córdoba" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#2563eb" />
+
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="es" href={`${siteUrl}${alternateEsPath}`} />
+    <link rel="alternate" hreflang="en" href={`${siteUrl}${alternateEnPath}`} />
+    <link rel="alternate" hreflang="x-default" href={`${siteUrl}${alternateEsPath}`} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:alt" content={imageAlt} />
+    <meta property="og:locale" content={locale} />
+    <meta property="og:locale:alternate" content={alternateLocale} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+    <meta name="twitter:image:alt" content={imageAlt} />
+
+    <link rel="icon" href="/images/favicon/david-face.png" type="image/png" />
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Onest:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    />
+
+</head>
+
+<body>
+    <a href="#contenido" class="skip-link">
+        {skipLink}
+    </a>
+
+    <slot />
+
+    <script>
+        import "../scripts/theme";
+        import "../scripts/backgroundVideo";
+    </script>
+</body>
+</html>

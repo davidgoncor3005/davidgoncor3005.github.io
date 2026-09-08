@@ -1,0 +1,89 @@
+---
+import type { Lang, Translations } from "../../i18n";
+import { routes, type RouteKey } from "../../config/routes";
+
+interface Props {
+    t: Translations;
+    lang: Lang;
+    page: RouteKey;
+}
+
+const { t, lang, page } = Astro.props as Props;
+
+const navLinks: Array<{ key: RouteKey; label: string; icon: string }> = [
+    { key: "home", label: t.nav.home, icon: "bi bi-house-door" },
+    { key: "about", label: t.nav.about, icon: "bi bi-person" },
+    { key: "technologies", label: t.nav.technologies, icon: "bi bi-code-slash" },
+    { key: "projects", label: t.nav.projects, icon: "bi bi-kanban" },
+    { key: "contact", label: t.nav.contact, icon: "bi bi-send" },
+];
+
+const languageOptions = [
+    {
+        code: t.language.es,
+        lang: "es",
+        url: routes[page].es,
+        label: lang === "es" ? t.nav.spanishCurrent : t.nav.spanishLink,
+    },
+    {
+        code: t.language.en,
+        lang: "en",
+        url: routes[page].en,
+        label: lang === "en" ? t.nav.englishCurrent : t.nav.englishLink,
+    },
+] as const;
+---
+
+<nav class="site-nav" aria-label={t.nav.mainLabel}>
+    <div class="site-nav__inner">
+        <ul class="site-nav__links">
+            {navLinks.map((link) => (
+                <li>
+                    <a
+                        class:list={["site-nav__link", { "is-active": link.key === page }]}
+                        href={routes[link.key][lang]}
+                        aria-current={link.key === page ? "page" : undefined}
+                    >
+                        <i class={link.icon} aria-hidden="true"></i>
+                        <span class="site-nav__label">{link.label}</span>
+                    </a>
+                </li>
+            ))}
+        </ul>
+
+        <span class="site-nav__divider" aria-hidden="true">|</span>
+
+        <div class="site-nav__controls" aria-label={t.nav.quickControls}>
+            <div
+                class="site-nav__languages"
+                aria-label={t.nav.languageLabel}
+            >
+                {languageOptions.map((option) => (
+                    <a
+                        class:list={["site-nav__language", { "is-active": option.lang === lang }]}
+                        href={option.url}
+                        lang={option.lang}
+                        hreflang={option.lang}
+                        aria-current={option.lang === lang ? "true" : undefined}
+                        aria-label={option.label}
+                    >
+                        {option.code}
+                    </a>
+                ))}
+            </div>
+
+            <span class="site-nav__divider" aria-hidden="true">|</span>
+
+            <button
+                class="site-nav__theme"
+                type="button"
+                aria-label={t.nav.switchToLight}
+                data-theme-toggle
+                data-action-light={t.nav.switchToLight}
+                data-action-dark={t.nav.switchToDark}
+            >
+                <i class="bi bi-moon" aria-hidden="true" data-theme-icon></i>
+            </button>
+        </div>
+    </div>
+</nav>

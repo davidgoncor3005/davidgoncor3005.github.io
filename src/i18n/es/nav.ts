@@ -1,0 +1,16 @@
+export const nav = {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "technologies": "Tecnologías",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "mainLabel": "Navegación principal",
+    "quickControls": "Controles rápidos",
+    "languageLabel": "Seleccionar idioma",
+    "spanishCurrent": "Español, idioma actual",
+    "spanishLink": "Ver en español",
+    "englishCurrent": "Inglés, idioma actual",
+    "englishLink": "Ver en inglés",
+    "switchToLight": "Cambiar a tema claro",
+    "switchToDark": "Cambiar a tema oscuro",
+} as const;

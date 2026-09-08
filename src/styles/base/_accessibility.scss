@@ -1,0 +1,25 @@
+.skip-link {
+    position: absolute;
+    top: -4rem;
+    left: 1rem;
+    z-index: 9999;
+    padding: .6rem .9rem;
+    border-radius: .5rem;
+    background-color: var(--brand-primary);
+    color: #fff;
+    text-decoration: none;
+}
+
+.skip-link:focus-visible {
+    top: 1rem;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+    outline: 3px solid var(--brand-primary);
+    outline-offset: 3px;
+}
