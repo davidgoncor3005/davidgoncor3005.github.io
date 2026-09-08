@@ -1,0 +1,23 @@
+---
+import type { Lang, Translations } from "../../i18n";
+import type { Project } from "../../types/portfolio";
+import ProjectCard from "./ProjectCard.astro";
+
+interface Props {
+    projects: readonly Project[];
+    t: Translations;
+    lang: Lang;
+}
+
+const { projects, t, lang } = Astro.props as Props;
+---
+
+<section class="projects-section" aria-labelledby="projects-title">
+    <h1 id="projects-title" class="section-title projects-title">{t.projects.title}</h1>
+
+    <div class="projects-grid">
+        {projects.map((project, index) => (
+            <ProjectCard project={project} index={index} lang={lang} labels={t.projects} />
+        ))}
+    </div>
+</section>

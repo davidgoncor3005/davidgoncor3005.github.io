@@ -1,0 +1,105 @@
+---
+import { Image } from "astro:assets";
+
+import type { Lang, Translations } from "../../i18n";
+import type { Project } from "../../types/portfolio";
+import {
+    getTechnologyColor,
+    getTechnologyPaths,
+    getTechnologyViewBox,
+    hasTechnologyIcon,
+} from "../../utils/technology";
+
+interface Props {
+    project: Project;
+    index: number;
+    lang: Lang;
+    labels: Translations["projects"];
+}
+
+const { project, index, lang, labels } = Astro.props as Props;
+---
+
+<article class="project-card">
+    <div class="project-card__image-wrapper">
+        <Image
+            src={`/${project.image}`}
+            class="project-card__image"
+            alt={project.imageAlt[lang]}
+            width={1280}
+            height={720}
+            loading={index === 0 ? "eager" : "lazy"}
+            decoding="async"
+        />
+    </div>
+
+    <div class="project-card__content">
+        <header class="project-card__heading">
+            <Image
+                src={`/${project.logo}`}
+                class="project-card__logo"
+                alt=""
+                width={48}
+                height={48}
+                loading="lazy"
+                decoding="async"
+            />
+            <h2 class="project-card__title">{project.name}</h2>
+        </header>
+
+        <p class="project-card__description">{project.description[lang]}</p>
+
+        <ul class="project-card__stack" aria-label={labels.stackTitle}>
+            {project.stack.map((technology) => (
+                <li
+                    class="project-card__technology"
+                    style={`--tech-background: ${getTechnologyColor(technology.name)}`}
+                >
+                    {hasTechnologyIcon(technology.name) && (
+                        <span class="project-card__technology-icon" aria-hidden="true">
+                            <svg viewBox={getTechnologyViewBox(technology.name)} focusable="false">
+                                {getTechnologyPaths(technology.name).map((path) =>
+                                    typeof path === "string"
+                                        ? <path d={path}></path>
+                                        : <path d={path.d} fill={path.fill}></path>
+                                )}
+                            </svg>
+                        </span>
+                    )}
+                    <span>{technology.name}</span>
+                </li>
+            ))}
+        </ul>
+
+        <div class="project-card__actions">
+            {project.preview ? (
+                <a
+                    href={project.preview}
+                    class="project-card__button project-card__button--primary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${labels.demoButton}: ${project.name}`}
+                >
+                    <i class="bi bi-rocket-takeoff" aria-hidden="true"></i>
+                    {labels.demoButton}
+                </a>
+            ) : (
+                <span class="project-card__demo-status">
+                    <i class="bi bi-rocket-takeoff" aria-hidden="true"></i>
+                    {labels.noDemoButton}
+                </span>
+            )}
+
+            <a
+                href={project.repository}
+                class="project-card__button project-card__button--github"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${labels.codeButton}: ${project.name}`}
+            >
+                <i class="bi bi-github" aria-hidden="true"></i>
+                {labels.codeButton}
+            </a>
+        </div>
+    </div>
+</article>
