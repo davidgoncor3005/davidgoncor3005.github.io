@@ -1,0 +1,105 @@
+---
+import projectsData from "../../data/projects.json";
+import technologiesData from "../../data/technologies.json";
+
+import type { Project, TechnologyCategory } from "../../types/portfolio";
+import type { Lang } from "../../i18n";
+
+import { getTranslations } from "../../i18n";
+import { routes, type RouteKey } from "../../config/routes";
+
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import AboutSection from "../../features/about/AboutSection.astro";
+import ContactSection from "../../features/contact/ContactSection.astro";
+import HomeSection from "../../features/home/HomeSection.astro";
+import ProjectsSection from "../../features/projects/ProjectsSection.astro";
+import TechnologiesSection from "../../features/technologies/TechnologiesSection.astro";
+import Navbar from "./Navbar.astro";
+
+interface Props {
+    lang: Lang;
+    page: RouteKey;
+}
+
+const { lang, page } = Astro.props as Props;
+const t = getTranslations(lang);
+const projects: readonly Project[] = projectsData;
+const technologies: readonly TechnologyCategory[] = technologiesData;
+
+const pageTitles: Record<RouteKey, string> = {
+    home: t.meta.title,
+    about: `${t.about.title} | ${t.meta.title}`,
+    technologies: `${t.technologies.title} | ${t.meta.title}`,
+    projects: `${t.projects.title} | ${t.meta.title}`,
+    contact: `${t.contact.title} | ${t.meta.title}`,
+};
+
+const pageMedia = {
+    home: {
+        video: "/media/cinematic/space.mp4",
+        poster: "/media/cinematic/space.webp",
+    },
+    about: {
+        video: "/media/cinematic/ocean.mp4",
+        poster: "/media/cinematic/ocean.webp",
+    },
+    technologies: {
+        video: "/media/cinematic/ice.mp4",
+        poster: "/media/cinematic/ice.webp",
+    },
+    projects: {
+        video: "/media/cinematic/earth.mp4",
+        poster: "/media/cinematic/earth.webp",
+    },
+    contact: null,
+} satisfies Record<RouteKey, { video: string; poster: string } | null>;
+
+const currentPath = routes[page][lang];
+const media = pageMedia[page];
+---
+
+<BaseLayout
+    title={pageTitles[page]}
+    description={t.meta.description}
+    siteName={t.meta.siteName}
+    imageAlt={t.meta.imageAlt}
+    skipLink={t.skipLink}
+    lang={lang}
+    path={currentPath}
+    alternateEsPath={routes[page].es}
+    alternateEnPath={routes[page].en}
+>
+    <Navbar t={t} lang={lang} page={page} />
+
+    <div class="page-shell">
+        {media && (
+            <Fragment>
+                <video
+                    class="page-video"
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    poster={media.poster}
+                    aria-hidden="true"
+                    data-background-video
+                >
+                    <source src={media.video} type="video/mp4" />
+                </video>
+                <div class="page-overlay" aria-hidden="true"></div>
+            </Fragment>
+        )}
+
+        <main
+            id="contenido"
+            class={page === "home" ? "home-page" : "page-content"}
+            tabindex="-1"
+        >
+            {page === "home" && <HomeSection t={t} lang={lang} />}
+            {page === "about" && <AboutSection t={t} />}
+            {page === "technologies" && <TechnologiesSection t={t} technologies={technologies} lang={lang} />}
+            {page === "projects" && <ProjectsSection projects={projects} t={t} lang={lang} />}
+            {page === "contact" && <ContactSection t={t} />}
+        </main>
+    </div>
+</BaseLayout>

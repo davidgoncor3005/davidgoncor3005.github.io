@@ -1,0 +1,89 @@
+---
+import { Image } from "astro:assets";
+import type { Lang, Translations } from "../../i18n";
+import { profile } from "../../config/profile";
+import { routes } from "../../config/routes";
+
+interface Props {
+    t: Translations;
+    lang: Lang;
+}
+
+const { t, lang } = Astro.props as Props;
+const projectsUrl = routes.projects[lang];
+const contactUrl = routes.contact[lang];
+const subtitleLength = t.home.subtitle.length;
+---
+
+<section class="home-section" aria-labelledby="home-title">
+    <div class="home-content">
+        <div class="home-text">
+            <a
+                href={profile.linkedin}
+                class="home-status"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <i class="bi bi-briefcase" aria-hidden="true"></i>
+                <span>{t.home.badge}</span>
+            </a>
+
+            <h1 id="home-title" class="home-title">{t.home.name}</h1>
+            <p class="home-subtitle" aria-label={t.home.subtitle}>
+                <span
+                    class="home-subtitle__text"
+                    aria-hidden="true"
+                    style={`--typing-steps: ${subtitleLength}`}
+                >
+                    {t.home.subtitle}
+                </span>
+                <span class="home-subtitle__cursor" aria-hidden="true">|</span>
+            </p>
+            <p class="home-description">{t.home.description}</p>
+
+            <div class="home-actions">
+                <a href={projectsUrl} class="home-button home-button--projects">
+                    {t.home.projectsButton}
+                </a>
+                <a href={contactUrl} class="home-button home-button--contact">
+                    {t.home.contactButton}
+                </a>
+            </div>
+        </div>
+
+        <div class="home-profile">
+            <div class="home-photo-ring">
+                <Image
+                    src="/images/david-profile.webp"
+                    alt={t.home.avatarAlt}
+                    class="home-photo"
+                    width={320}
+                    height={320}
+                    loading="eager"
+                    decoding="async"
+                />
+            </div>
+
+            <nav class="home-social-links" aria-label={t.home.secondaryLinksLabel}>
+                <a
+                    href={profile.github}
+                    class="home-social-link home-social-link--github"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={t.home.githubButton}
+                >
+                    <i class="bi bi-github" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={profile.linkedin}
+                    class="home-social-link home-social-link--linkedin"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={t.home.linkedinButton}
+                >
+                    <i class="bi bi-linkedin" aria-hidden="true"></i>
+                </a>
+            </nav>
+        </div>
+    </div>
+</section>

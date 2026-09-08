@@ -1,0 +1,60 @@
+[
+  {
+    "category": {
+      "es": "Frontend & UI/UX",
+      "en": "Frontend & UI/UX"
+    },
+    "items": [
+      { "name": "HTML5" },
+      { "name": "CSS3" },
+      { "name": "JavaScript" },
+      { "name": "TypeScript" },
+      { "name": "Sass" },
+      { "name": "Bootstrap" },
+      { "name": "Tailwind CSS" },
+      { "name": "Astro" },
+      { "name": "Vite" },
+      { "name": "WordPress" },
+      { "name": "Figma" }
+    ]
+  },
+  {
+    "category": {
+      "es": "Backend, APIs & datos",
+      "en": "Backend, APIs & data"
+    },
+    "items": [
+      { "name": "Java" },
+      { "name": "Spring Boot" },
+      { "name": "Thymeleaf" },
+      { "name": "PHP" },
+      { "name": "Symfony" },
+      { "name": "Node.js" },
+      { "name": "MySQL" },
+      { "name": "MariaDB" },
+      { "name": "MongoDB" },
+      { "name": "Swagger / OpenAPI" },
+      { "name": "Postman" }
+    ]
+  },
+  {
+    "category": {
+      "es": "Herramientas & DevOps",
+      "en": "Tools & DevOps"
+    },
+    "items": [
+      { "name": "IntelliJ IDEA" },
+      { "name": "Visual Studio Code" },
+      { "name": "PhpStorm" },
+      { "name": "Git" },
+      { "name": "GitHub" },
+      { "name": "Terminal" },
+      { "name": "Docker" },
+      { "name": "Nginx" },
+      { "name": "Vercel" },
+      { "name": "Proxmox" },
+      { "name": "ChatGPT" },
+      { "name": "Codex" }
+    ]
+  }
+]
