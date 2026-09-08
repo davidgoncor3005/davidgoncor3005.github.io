@@ -4,14 +4,11 @@
 @use "base/accessibility";
 
 @use "layout/navbar";
-@use "layout/footer";
 
-@use "components/avatar";
-@use "components/hero";
-@use "components/experience";
-@use "components/cards";
-@use "components/technologies";
-@use "components/projects";
-@use "components/forms";
+@use "features/home";
+@use "features/about";
+@use "features/technologies";
+@use "features/projects";
+@use "features/contact";
 
 @use "themes/theme";
