@@ -1,73 +1,7 @@
-body {
-    background-color: var(--page-bg);
-    color: var(--text-main);
+:root {
+    color-scheme: dark;
 }
 
-.card {
-    background-color: var(--card-bg);
-    border-color: var(--border-custom);
-    color: var(--text-main);
-}
-
-.border-bottom,
-.border-top {
-    border-color: var(--border-custom) !important;
-}
-
-.text-secondary,
-.text-muted {
-    color: var(--text-muted-custom) !important;
-}
-
-.text-primary {
-    color: var(--brand-primary) !important;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: var(--text-main);
-}
-
-.btn-primary {
-    border-color: var(--brand-primary);
-    background-color: var(--brand-primary);
-}
-
-.btn-primary:hover {
-    border-color: var(--brand-secondary);
-    background-color: var(--brand-secondary);
-}
-
-.btn-outline-primary {
-    color: var(--brand-primary);
-    border-color: var(--brand-primary);
-}
-
-.btn-outline-primary:hover {
-    color: #ffffff;
-    border-color: var(--brand-primary);
-    background-color: var(--brand-primary);
-}
-
-.text-bg-success {
-    background-color: var(--brand-accent) !important;
-}
-
-::selection {
-    background-color: var(--brand-primary);
-    color: #ffffff;
-}
-
-[data-theme="dark"] .btn-outline-dark {
-    color: #f8fafc;
-    border-color: #f8fafc;
-}
-
-[data-theme="dark"] .btn-outline-dark:hover {
-    color: #0b1120;
-    background-color: #f8fafc;
+[data-theme="light"] {
+    color-scheme: light;
 }
