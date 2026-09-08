@@ -1,14 +1,13 @@
-import { es } from "./es";
-import { en } from "./en";
+import { en } from "./en/index";
+import { es } from "./es/index";
 
 export const ui = {
     es,
-    en
-};
+    en,
+} as const;
 
 export type Lang = keyof typeof ui;
-
-export const defaultLang: Lang = "es";
+export type Translations = (typeof ui)[Lang];
 
 export function getTranslations(lang: Lang) {
     return ui[lang];
