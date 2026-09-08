@@ -1,11 +1,22 @@
 html {
-    scroll-behavior: smooth; /* Para un desplazamiento suave al hacer clic en enlaces */
+    min-height: 100%;
+    scroll-behavior: auto;
 }
 
 body {
+    min-height: 100%;
+    margin: 0;
+    background-color: var(--page-bg);
+    color: var(--text-main);
     font-family: var(--font-body);
     font-size: 1.06rem;
     line-height: 1.7;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 h1,
@@ -15,65 +26,84 @@ h4,
 h5,
 h6 {
     font-family: var(--font-title);
-    letter-spacing: -.025em;
 }
 
 .section-title {
-    padding-top: 8rem;
-    scroll-margin-top: 10rem;
+    color: var(--text-main);
+    font-family: var(--font-title);
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    text-align: center;
 }
 
-.section-title > h2 {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1.25rem;
-    font-weight: 700;
+button,
+input,
+textarea,
+select {
+    font: inherit;
 }
 
-.text-highlight-about {
-    color: var(--brand-secondary);
-    font-weight: 700;
+img,
+video {
+    display: block;
+    max-width: 100%;
 }
 
-.about-content > p {
-    margin-bottom: 1.5rem;
+.page-shell {
+    min-height: 100vh;
+    background-color: var(--page-bg);
 }
 
-.about-list {
-    display: grid;
-    gap: .6rem;
-    padding-left: 0;
-    margin-top: 1rem;
-    margin-bottom: 0;
+.page-video,
+.page-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
 }
 
-.about-list li {
-    display: grid;
-    grid-template-columns: .65rem minmax(0, 1fr);
-    gap: .7rem;
+.page-video {
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: .72;
+    filter: brightness(.78) contrast(1.05);
 }
 
-.about-list li::before {
-    content: "";
-    width: .5rem;
-    height: .5rem;
-    margin-top: .62rem;
-    border-radius: 50%;
-    background-color: var(--brand-secondary);
-    box-shadow: 0 0 0 .25rem color-mix(in srgb, var(--brand-secondary) 18%, transparent);
+.page-overlay {
+    z-index: 1;
+    background-color: var(--page-overlay);
 }
 
-@media (max-width: 575.98px) {
+[data-theme="light"] .page-video {
+    opacity: .18;
+    filter: brightness(1.1) contrast(.92);
+}
+
+.home-page {
+    position: relative;
+    z-index: 2;
+}
+
+.page-content {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    padding: 6rem 2rem 4rem;
+    overflow-x: hidden;
+}
+
+@media (max-width: 575px) {
     body {
         font-size: 1rem;
     }
 
-    .section-title {
-        padding-top: 5rem;
-        scroll-margin-top: 10rem;
+    .page-content {
+        padding: 5rem .9rem 3rem;
     }
 
-    .section-title > h2 {
-        font-size: 1.25rem;
+    .section-title {
+        font-size: 2rem;
     }
 }
