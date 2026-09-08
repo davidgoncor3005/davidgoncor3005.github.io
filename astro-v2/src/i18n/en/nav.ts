@@ -1,0 +1,16 @@
+export const nav = {
+    "home": "Home",
+    "about": "About me",
+    "technologies": "Technologies",
+    "projects": "Projects",
+    "contact": "Contact",
+    "mainLabel": "Main navigation",
+    "quickControls": "Quick controls",
+    "languageLabel": "Select language",
+    "spanishCurrent": "Spanish, current language",
+    "spanishLink": "View in Spanish",
+    "englishCurrent": "English, current language",
+    "englishLink": "View in English",
+    "switchToLight": "Switch to light theme",
+    "switchToDark": "Switch to dark theme",
+} as const;
