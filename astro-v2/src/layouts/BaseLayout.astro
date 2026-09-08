@@ -1,52 +1,74 @@
 ---
 import "../styles/main.scss";
+import type { Lang } from "../i18n";
+
+interface Props {
+    title: string;
+    description: string;
+    siteName: string;
+    imageAlt: string;
+    skipLink: string;
+    lang: Lang;
+    path: string;
+    alternateEsPath: string;
+    alternateEnPath: string;
+}
 
 const {
-    title = "David González Córdoba | Desarrollador Web Junior",
-    description = "Portfolio profesional de David González Córdoba, desarrollador web junior titulado en Desarrollo de Aplicaciones Web.",
-    lang = "es"
-} = Astro.props;
+    title,
+    description,
+    siteName,
+    imageAlt,
+    skipLink,
+    lang,
+    path,
+    alternateEsPath,
+    alternateEnPath,
+} = Astro.props as Props;
 
-const siteUrl = "https://davidgoncor3005.github.io";
-const currentPath = lang === "en" ? "/en/" : "/";
-const canonicalUrl = `${siteUrl}${currentPath}`;
-
-const alternateEsUrl = `${siteUrl}/`;
-const alternateEnUrl = `${siteUrl}/en/`;
-
-const imagePath = "/images/social/portfolio-og.webp";
-const imageUrl = `${siteUrl}${imagePath}`;
-
+const siteUrl = (Astro.site ?? new URL("https://davidgonzalezcordoba-dev.vercel.app")).toString().replace(/\/$/, "");
+const canonicalUrl = `${siteUrl}${path}`;
+const imageUrl = `${siteUrl}/images/social/portfolio-og.webp`;
 const locale = lang === "en" ? "en_US" : "es_ES";
 const alternateLocale = lang === "en" ? "es_ES" : "en_US";
 ---
 
 <!DOCTYPE html>
-<html lang={lang}>
+<html lang={lang} data-theme="dark">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <script is:inline>
+        (() => {
+            let theme = "dark";
+            try {
+                const saved = localStorage.getItem("theme");
+                if (saved === "light" || saved === "dark") theme = saved;
+            } catch {}
+
+            document.documentElement.dataset.theme = theme;
+        })();
+    </script>
+
     <title>{title}</title>
     <meta name="description" content={description} />
-
-    <link rel="canonical" href={canonicalUrl} />
-
-    <link rel="alternate" hreflang="es" href={alternateEsUrl} />
-    <link rel="alternate" hreflang="en" href={alternateEnUrl} />
-    <link rel="alternate" hreflang="x-default" href={alternateEsUrl} />
-
     <meta name="author" content="David González Córdoba" />
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#0d6efd" />
+    <meta name="theme-color" content="#2563eb" />
+
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="es" href={`${siteUrl}${alternateEsPath}`} />
+    <link rel="alternate" hreflang="en" href={`${siteUrl}${alternateEnPath}`} />
+    <link rel="alternate" hreflang="x-default" href={`${siteUrl}${alternateEsPath}`} />
 
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Portfolio de David González Córdoba" />
+    <meta property="og:site_name" content={siteName} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={imageUrl} />
-    <meta property="og:image:alt" content="Captura del portfolio de David González Córdoba" />
+    <meta property="og:image:alt" content={imageAlt} />
     <meta property="og:locale" content={locale} />
     <meta property="og:locale:alternate" content={alternateLocale} />
 
@@ -54,19 +76,13 @@ const alternateLocale = lang === "en" ? "es_ES" : "en_US";
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={imageUrl} />
+    <meta name="twitter:image:alt" content={imageAlt} />
 
-    <link rel="icon" href="/images/favicon/favicon.svg" type="image/svg+xml" />
-
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    />
-
+    <link rel="icon" href="/images/favicon/david-face.png" type="image/png" />
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
         rel="stylesheet"
     />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -74,103 +90,18 @@ const alternateLocale = lang === "en" ? "es_ES" : "en_US";
         rel="stylesheet"
     />
 
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        defer
-    ></script>
 </head>
 
 <body>
     <a href="#contenido" class="skip-link">
-        {lang === "en" ? "Skip to main content" : "Saltar al contenido principal"}
+        {skipLink}
     </a>
 
     <slot />
 
-    <script is:inline>
-        const themeToggle = document.getElementById('themeToggle');
-        const themeIcon = document.getElementById('themeIcon');
-
-        if (themeToggle && themeIcon) {
-            const savedTheme = localStorage.getItem('theme') || 'dark';
-
-            document.documentElement.setAttribute('data-theme', savedTheme);
-            updateThemeIcon(savedTheme);
-
-            themeToggle.addEventListener('click', () => {
-                const currentTheme = document.documentElement.getAttribute('data-theme');
-                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-                document.documentElement.setAttribute('data-theme', newTheme);
-                localStorage.setItem('theme', newTheme);
-                updateThemeIcon(newTheme);
-            });
-
-            function updateThemeIcon(theme) {
-                if (theme === 'dark') {
-                    themeIcon.className = 'bi bi-moon';
-                } else {
-                    themeIcon.className = 'bi bi-sun';
-                }
-            }
-        }
-    </script>
-    <script is:inline>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Selecciona todos los enlaces del navbar que apuntan a secciones
-            const navLinks = document.querySelectorAll('.portfolio-navbar__link[href^="#"]');
-
-            // Convierte esos enlaces en secciones reales
-            const sections = Array.from(navLinks)
-                .map((link) => document.querySelector(link.getAttribute('href')))
-                .filter(Boolean);
-
-            // Quita la clase activa de todos los enlaces del navbar
-            function clearActiveLinks() {
-                navLinks.forEach((link) => link.classList.remove('is-active'));
-            }
-
-            // Marca como activo el enlace que corresponde a la sección visible
-            function setActiveLink(sectionId) {
-                clearActiveLinks();
-
-                const activeLink = document.querySelector(
-                    `.portfolio-navbar__link[href="#${sectionId}"]`
-                );
-
-                if (activeLink) {
-                    activeLink.classList.add('is-active');
-                }
-            }
-
-            // Detecta qué sección está más cerca de la parte superior visible
-            function updateActiveSection() {
-                let currentSectionId = null;
-
-                sections.forEach((section) => {
-                    const sectionTop = section.getBoundingClientRect().top;
-
-                    // 160px deja margen para el navbar sticky y evita activar demasiado pronto
-                    if (sectionTop <= 160) {
-                        currentSectionId = section.getAttribute('id');
-                    }
-                });
-
-                // Si todavía estamos en el hero, no se marca ninguna sección
-                if (!currentSectionId) {
-                    clearActiveLinks();
-                    return;
-                }
-
-                setActiveLink(currentSectionId);
-            }
-
-            // Ejecuta al cargar la página
-            updateActiveSection();
-
-            // Ejecuta al hacer scroll
-            window.addEventListener('scroll', updateActiveSection, { passive: true });
-        });
+    <script>
+        import "../scripts/theme";
+        import "../scripts/backgroundVideo";
     </script>
 </body>
 </html>
