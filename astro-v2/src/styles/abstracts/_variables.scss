@@ -1,25 +1,28 @@
 :root {
+    /* Tipografía */
     --font-title: "Onest", system-ui, sans-serif;
     --font-body: "Inter", system-ui, sans-serif;
     --font-code: "Geist Mono", ui-monospace, monospace;
 
-    --brand-primary: #2563eb; /* Color principal: botones, enlaces y elementos importantes */
-    --brand-secondary: #7c3aed; /* Color secundario: elementos destacados */
-    --brand-accent: #14b8a6; /* Color de apoyo: estados positivos */
+    /* Marca */
+    --brand-primary: #2563eb;
+    --brand-secondary: #7c3aed;
+    --brand-accent: #14b8a6;
 
-    --page-bg: #f8fafc; /* Fondo general de la página */
-    --section-bg: #f1f5f9; /* Fondo de secciones */
-    --card-bg: #ffffff; /* Fondo de tarjetas, formularios y contenedores */
+    /* Superficies */
+    --page-bg: #f8fafc;
+    --section-bg: #f1f5f9;
+    --card-bg: #ffffff;
+    --page-overlay: rgba(248, 250, 252, .72);
 
-    --text-main: #0f172a; /* Color principal del texto */
-    --text-muted-custom: #475569; /* Color de texto secundario */
+    /* Texto y bordes */
+    --text-main: #0f172a;
+    --text-muted-custom: #475569;
+    --border-custom: #cbd5e1;
 
-    --border-custom: #cbd5e1; /* Color de bordes suaves */
-
-    --badge-bg: #eef2ff; /* Fondo de badges */
-    --badge-hover-bg: #dbeafe; /* Fondo de badges al pasar el ratón */
-
-    --shadow-soft: 0 .75rem 2rem rgba(15, 23, 42, .08); /* Sombra suave para cards o navbar */
+    /* Elementos auxiliares */
+    --badge-bg: #eef2ff;
+    --shadow-soft: 0 .75rem 2rem rgba(15, 23, 42, .08);
 }
 
 [data-theme="dark"] {
@@ -30,14 +33,12 @@
     --page-bg: #0b1120;
     --section-bg: #111827;
     --card-bg: #1e293b;
+    --page-overlay: rgba(11, 17, 32, .72);
 
     --text-main: #e5e7eb;
     --text-muted-custom: #94a3b8;
-
     --border-custom: #334155;
 
     --badge-bg: #172033;
-    --badge-hover-bg: #1e3a5f;
-
     --shadow-soft: 0 .75rem 2rem rgba(0, 0, 0, .28);
 }
